@@ -19,8 +19,12 @@ export function useModalForm({ onModal }: Props) {
     id: parseInt((modal.id ?? "0") as string),
   });
   const user = useMemo(() => {
-    return rows.length > 0 ? rows[0] : ({} as UserShape);
-  }, [rows]);
+    return !modal.id
+      ? rows.length > 0
+        ? rows[0]
+        : ({} as UserShape)
+      : ({} as UserShape);
+  }, [rows, modal]);
 
   const schema = useMemo(() => UsersModalSchema(t), []);
   const formProps = useFormRules<UsersPayload>({
