@@ -42,7 +42,7 @@ export function useForm({ csrf, recaptchaInstance }: Props) {
         recaptcha: token,
         csrf,
       });
-      await recaptchaInstance.reset();
+      recaptchaInstance.reset();
     });
   };
 

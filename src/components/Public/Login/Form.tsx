@@ -28,7 +28,7 @@ export function LoginForm({ csrf }: Props) {
   const { forgotPassword } = publicRoutes;
   const { t } = useI18n()
 
-
+  console.log("isloading:", isLoading, "isrecaptch", isRecaptchaLoaded)
   return (
     <FormProvider {...formMethods}>
       <form onSubmit={handleSubmit}>
@@ -71,7 +71,7 @@ export function LoginForm({ csrf }: Props) {
           <Button
             text={isSuccess ? t("Texts.redirect") : t("Words.send")}
             type="submit"
-            isLoading={isLoading || isRecaptchaLoaded}
+            isLoading={(isLoading && isRecaptchaLoaded) || isLoading}
             disabled={!isAllFilled || isSuccess}
           />
         </div>
