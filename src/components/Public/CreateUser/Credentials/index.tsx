@@ -25,13 +25,13 @@ export function Credentials({ handleToggleStageForm, isLoading }: Props) {
           <Button
             className="bg-white border-black border-2 "
             onClick={() => handleToggleStageForm("PERSONAL")}
-            text={t("Words.go_back")}
+            text={t("Texts.go_back")}
             type="button"
           />
         </div>
         <div className="form-submit mt-6  md:mt-0 w-full md:w-1/2">
           <Button
-            text={t("Words.create_account")}
+            text={t("Texts.create_account")}
             type="submit"
             isLoading={isLoading}
           />
