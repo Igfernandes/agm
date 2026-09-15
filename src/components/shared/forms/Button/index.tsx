@@ -22,7 +22,7 @@ export function Button({
   justify-center ${
     props.type === "submit" ? "text-white" : ""
   } bg-primary active:scale-[95%] font-semibold
-  duration-75 text-white w-full px-3 min-h-[48px] rounded-md mx-auto 
+  duration-75 w-full px-3 min-h-[48px] rounded-md mx-auto 
   disabled:bg-disable disabled:text-disabled cursor-pointer`;
 
   useEffect(() => {

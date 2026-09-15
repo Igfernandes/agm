@@ -23,7 +23,7 @@ export function Credentials({ handleToggleStageForm, isLoading }: Props) {
       <div className="button-group flex flex-wrap md:flex-nowrap ">
         <div className="form-prev mt-6 md:mt-0 w-full md:mr-2 md:w-1/2">
           <Button
-            className="bg-white text-primary border-black border-2 "
+            className="bg-white text-primary border-black border-2"
             onClick={() => handleToggleStageForm("PERSONAL")}
             text={t("Texts.go_back")}
             type="button"
