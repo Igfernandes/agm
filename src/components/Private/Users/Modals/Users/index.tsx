@@ -15,7 +15,7 @@ export function ModalFormUsers({
   groups,
 }: ModalFormProps) {
   const { t } = useI18n()
-  const { formMethods, register, errors, submit, handleSubmit, isLoading } =
+  const { formMethods, register, errors, submit, handleSubmit, isLoading, user } =
     useModalForm({
       onModal,
     });
@@ -38,6 +38,7 @@ export function ModalFormUsers({
                 return {
                   text: group.name,
                   value: group.id,
+                  selected: !!((user?.groups ?? []).find((groupItem) => groupItem.id === group.id))
                 };
               })}
               label={t("Screens.dashboard.users.user_group")}

@@ -28,7 +28,6 @@ export function LoginForm({ csrf }: Props) {
   const { forgotPassword } = publicRoutes;
   const { t } = useI18n()
 
-  console.log("isloading:", isLoading, "isrecaptch", isRecaptchaLoaded)
   return (
     <FormProvider {...formMethods}>
       <form onSubmit={handleSubmit}>

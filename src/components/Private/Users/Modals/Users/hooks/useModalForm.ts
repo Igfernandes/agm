@@ -67,5 +67,6 @@ export function useModalForm({ onModal }: Props) {
     ...formProps,
     isLoading: isLoadingPost || isLoadingPut,
     submit,
+    user,
   };
 }
