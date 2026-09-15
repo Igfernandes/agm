@@ -21,7 +21,7 @@ export function useForm({ csrf, recaptchaInstance }: Props) {
     isPending: isLoading,
     isSuccess,
   } = usePostAuth();
-  const {t } = useI18n()
+  const { t } = useI18n();
   const schema = useMemo(() => loginFormSchema(t), [t]);
   const { formMethods, isAllFilled } = useFormRules<Payload>({
     schema,
@@ -34,14 +34,15 @@ export function useForm({ csrf, recaptchaInstance }: Props) {
   } = formMethods;
 
   const onSubmit = async ({ login, password, rememberMe }: PostAuthPayload) => {
-    recaptchaInstance.execute((token) => {
-      postAuth({
+    recaptchaInstance.execute(async (token) => {
+      await postAuth({
         login,
         password,
         rememberMe,
         recaptcha: token,
         csrf,
       });
+      await recaptchaInstance.reset();
     });
   };
 
