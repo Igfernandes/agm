@@ -1,4 +1,4 @@
-import { UserCategoriesShape } from "../../../types/Users/UserCategories";
+import { ClientCategoriesShape } from "@type/Clients/ClientCategories";
 
 export const MOCK_USER_CATEGORIES = [
   {
@@ -22,4 +22,4 @@ export const MOCK_USER_CATEGORIES = [
     created_at: new Date().toUTCString(),
     updated_at: new Date().toUTCString(),
   },
-] as UserCategoriesShape[];
+] as ClientCategoriesShape[];

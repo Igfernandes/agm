@@ -1,10 +1,9 @@
-import { FieldGroupsShape } from "../../../types/Fields";
+import { FieldsGroupsShape } from "@type/Fields/fieldsGroups";
 
 export const MOCK_USER_FIELDS_GROUP = [
   {
     id: 1,
     name: "BASIC",
-    items: 10,
     position: 1,
   },
   {
@@ -37,4 +36,4 @@ export const MOCK_USER_FIELDS_GROUP = [
     items: 10,
     position: 6,
   },
-] as FieldGroupsShape[];
+] as FieldsGroupsShape[];
