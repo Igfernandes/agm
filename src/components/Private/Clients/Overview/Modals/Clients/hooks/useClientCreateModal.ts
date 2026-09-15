@@ -21,7 +21,7 @@ export function useModalForm() {
   const { watch, setError } = formMethods;
 
   const submit = ({ birthdate, ...payload }: ClientCreatePayload) => {
-    if (Validations.cpf(payload.cpf))
+    if (!Validations.cpf(payload.cpf))
       return setError("cpf", {
         type: "manual",
         message: t("Validations.cpf"),

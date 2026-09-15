@@ -33,7 +33,7 @@ export function GalleryProfile({ gallery }: Props) {
                 </div>
 
                 <div className="w-full md:w-[25%] ml-auto mt-10">
-                    <Button text={gallery ? t("Words.update") : t("Words.create")} isLoading={isLoading} />
+                    <Button className="text-white" text={gallery ? t("Words.update") : t("Words.create")} isLoading={isLoading} />
                 </div>
             </form>
         </FormProvider>

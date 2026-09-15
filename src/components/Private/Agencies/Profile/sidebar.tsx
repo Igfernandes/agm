@@ -72,7 +72,7 @@ export function Sidebar({ setValue, watch, register, agency, isLoading }: Props)
             </div>
             <div className="w-full mt-auto">
                 <div className="w-full ml-auto mt-3  mb-1">
-                    <Button isLoading={isLoading} text={watch('id') ? t("Words.update") : t("Words.create")} />
+                    <Button className="text-white" isLoading={isLoading} text={watch('id') ? t("Words.update") : t("Words.create")} />
                 </div>
             </div>
 

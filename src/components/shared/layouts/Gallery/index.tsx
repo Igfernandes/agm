@@ -11,9 +11,9 @@ export function Gallery({ api, id }: GalleryProps) {
 
     return (
         <>
-        <div className="w-full relative bg-secondary h-[20vh] overflow-y-auto p-1 border-2 border-zinc-300 mt-5">
+        <div className="w-full relative bg-white h-[20vh] hover:bg-primary cursor-pointer hover:text-white overflow-hidden p-1 border-2 border-zinc-300 mt-1">
              <input ref={fileRef} onChange={handleUploadFiles} accept=".png,.jpg,.jpge" className="opacity-0 absolute top-0 left-0 z-20 w-full h-full flex-1" type="file" multiple />
-                <div className="flex items-center justify-center py-14 ml-[1px] w-full text-center">
+                <div className="flex items-center justify-center py-7 ml-[1px] w-full text-center">
                 <span>Arraste e solte <br /> imagens aqui</span>
             </div>
 

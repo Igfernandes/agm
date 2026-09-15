@@ -23,7 +23,7 @@ export function AgenciesPreviewPage({ targetAgency }: AgencyPreviewPageProps) {
                     <h1 className="text-primary font-bold text-2xl">{targetAgency.name}</h1>
                 </div>
                 <div className="flex flex-wrap md:flex-nowrap flex-col-reverse md:flex-row justify-between">
-                    <div className="w-full  my-4">
+                    <div className="w-full md:w-[70%] my-4">
                         <div>
                             <p className="text-justify" dangerouslySetInnerHTML={{ __html: String(targetAgency.describe) }} />
                         </div>
@@ -39,7 +39,7 @@ export function AgenciesPreviewPage({ targetAgency }: AgencyPreviewPageProps) {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full md:w-[600px] text-center ">
+                    <div className="w-full md:w-[30%] text-center ">
                         <div className="shadow-md border-2 border-zinc-200 rounded-lg p-4 bg-white mx-0 md:mx-8">
                             <Image src={targetAgency.logotype || "/images/default-agency-logotype.png"}
                                 alt={targetAgency.name} width={200} height={200}
@@ -62,10 +62,12 @@ export function AgenciesPreviewPage({ targetAgency }: AgencyPreviewPageProps) {
                             <div className="mt-1 mb-2">
                                 <p><strong className="text-primary">{t("Screens.agencies.cnpj")}: </strong>{getCNPJFormatted(targetAgency.cnpj)}</p>
                             </div>
-                            <div className="mt-2">
-                                <span className="bg-primary block text-white mb-1"><strong>{t("Screens.agencies.located_at")}</strong></span>
-                                <p className="text-sm text-justify bg-secondary p-1 shadow-md">{address?.complement}, {address?.number}, {address?.city}. {address?.state} - {address?.country}, {address?.zip_code}.</p>
-                            </div>
+                            <When value={Object.values(address ?? {}).filter((value) => !!value).length > 0}>
+                                <div className="mt-2">
+                                    <span className="bg-primary block text-white mb-1"><strong>{t("Screens.agencies.located_at")}</strong></span>
+                                    <p className="text-sm text-justify bg-secondary p-1 shadow-md">{address?.complement}, {address?.number}, {address?.city}. {address?.state} - {address?.country}, {address?.zip_code}.</p>
+                                </div>
+                            </When>
                         </div>
                     </div>
                 </div>

@@ -72,7 +72,13 @@ export function Information({ sale }: Props) {
                                 <p className="text-sm">{t("Screens.dashboard.sales.text_describe_client_information")}</p>
                             </div>
                             <InfoBoard>
-                                <TViewer element="reference" name="client" url={`${privateRoutes.clients}/${sale.client.id}`} label={t("Words.client")} value={sale.client.name ?? "--"} />
+                                <When value={!!sale.client}>
+                                    <TViewer element="reference" name="client" url={`${privateRoutes.clients}/${sale.client?.id}`} label={t("Words.client")} value={sale?.client?.name ?? "--"} />
+                                </When>
+                                <When value={!sale.client}>
+                                    <TViewer element="reference" name="client" url={`#`} label={t("Words.client")} value={"Excluído"} />
+                                </When>
+
                                 <TViewer name="document" label={t("Words.document")} defaultValue={getCPFFormatted(String(metadata?.cpf)) ?? "--"} />
                                 <TViewer name="email" label={t("Words.email")} defaultValue={String(metadata?.email) ?? "--"} />
                                 <TViewer name="phone" label={t("Words.phone")} defaultValue={String(metadata?.phone) ?? "--"} />
