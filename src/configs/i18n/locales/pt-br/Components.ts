@@ -9,7 +9,7 @@ export const Components = {
     title_already_exclude: "Você deseja remover este cliente?",
   },
   subscribe: {
-    notification_to_you: "A Matrilhas quer enviar notificações pra você!",
+    notification_to_you: "A AGM quer enviar notificações pra você!",
   },
   gallery: {
     modal_title: "Carregar e anexar arquivos",

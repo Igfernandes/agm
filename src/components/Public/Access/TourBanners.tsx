@@ -21,7 +21,7 @@ export function TourBanners() {
                             </div>
                             <div className="mr-2">
                                 <Link href={`/tours/${tour.slug}`}
-                                    className="bg-emerald-600 text-white px-4 py-1 rounded-md font-semibold hover:bg-emerald-700 transition-colors">
+                                    className="bg-rose-600 text-white px-4 py-1 rounded-md font-semibold hover:bg-rose-700 transition-colors">
                                     {t("Texts.see_more")}
                                 </Link>
                             </div>
@@ -30,7 +30,7 @@ export function TourBanners() {
                 ))} />
             </When>
             <When value={tours.length == 0}>
-                <Image width={800} height={700} className="h-full object-cover w-full" src={"/imgs/banners/banner-1.png"} alt={`Banner for tour`} />
+                <Image width={800} height={700} className="h-full object-cover w-full" src={"/imgs/banners/banner-1.jpg"} alt={`Banner for tour`} />
             </When>
         </div>
     )

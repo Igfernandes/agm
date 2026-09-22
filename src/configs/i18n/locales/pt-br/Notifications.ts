@@ -1,7 +1,7 @@
 export const Notifications = {
   title_users_create: "Usuário foi criado",
   text_users_create: "Há um novo usuário convidado para o sistema.",
-
+  
   title_users_update: "Usuário foi atualizado",
   text_users_update: "As informações de um usuário foram modificadas.",
 
@@ -23,50 +23,18 @@ export const Notifications = {
   title_forms_view: "Formulário visualizado",
   text_forms_view: "As informações de um formulário foram acessadas.",
 
-  title_tours_create: "Passeio foi criado",
-  text_tours_create: "Um novo passeio foi adicionado ao sistema.",
+  title_services_create: "Serviço foi criado",
+  text_services_create: "Um novo serviço foi adicionado ao sistema.",
 
-  title_tours_update: "Passeio foi atualizado",
-  text_tours_update: "As informações de um passeio foram modificadas.",
-  title_tours_delete: "Passeio foi excluído",
-  text_tours_delete: "Um passeio foi removido do sistema.",
+  title_services_update: "Serviço foi atualizado",
+  text_services_update: "As informações de um serviço foram modificadas.",
 
-  title_tours_view: "Passeio visualizado",
-  text_tours_view: "As informações de um passeio foram acessadas.",
+  title_services_delete: "Serviço foi excluído",
+  text_services_delete: "Um serviço foi removido do sistema.",
 
-  title_agencies_create: "A agência foi criada",
-  text_agencies_create: "Uma nova agência foi adicionada ao sistema.",
+  title_services_view: "Serviço visualizado",
+  text_services_view: "As informações de um serviço foram acessadas.",
 
-  title_agencies_update: "A agência foi atualizada",
-  text_agencies_update: "As informações de uma agência foram modificadas.",
-  title_agencies_delete: "A agência foi excluída",
-  text_agencies_delete: "Uma agência foi removida do sistema.",
-
-  title_agencies_view: "A agência foi visualizada",
-  text_agencies_view: "As informações de uma agência foram acessadas.",
-
-  title_sales_create: "A venda foi criada",
-  text_sales_create: "Uma nova venda foi adicionada ao sistema.",
-
-  title_sales_update: "A venda foi atualizada",
-  text_sales_update: "As informações de uma venda foram modificadas.",
-  title_sales_delete: "A venda foi excluída",
-  text_sales_delete: "Uma venda foi removida do sistema.",
-
-  title_sales_view: "A venda foi visualizada",
-  text_sales_view: "As informações de uma venda foram acessadas.",
-
-  title_payments_create: "O pagamento foi criado",
-  text_payments_create: "Um novo pagamento foi adicionado ao sistema.",
-
-  title_payments_update: "O pagamento foi atualizado",
-  text_payments_update: "As informações de um pagamento foram modificadas.",
-  title_payments_delete: "O pagamento foi excluído",
-  text_payments_delete: "Um pagamento foi removido do sistema.",
-
-  title_payments_view: "O pagamento foi visualizado",
-  text_payments_view: "As informações de um pagamento foram acessadas.",
-  
   title_clients_create: "Cliente foi criado",
   text_clients_create: "Um novo cliente foi registrado no sistema.",
 

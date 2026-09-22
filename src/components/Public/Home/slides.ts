@@ -1,14 +1,10 @@
 export const SLIDES = [
   {
-    src: "/imgs/banners/banner-1.png",
+    src: "/imgs/banners/banner-1.jpg",
     alt: "Praia",
   },
   {
-    src: "/imgs/banners/banner-2.png",
-    alt: "Praia",
-  },
-  {
-    src: "/imgs/banners/banner-4.png",
+    src: "/imgs/banners/banner-2.jpg",
     alt: "Praia",
   },
 ];

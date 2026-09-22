@@ -13,5 +13,5 @@ export const Icons = {
     "FACEBOOK": <FacebookBI fill={othersColors.white} width={24} height={24} />,
     "LINKEDIN": <LinkedinBI fill={othersColors.white} width={24} height={24} />,
     "TWITTER": <TwitterBI fill={othersColors.white} width={24} height={24} />,
-    "SITE": <GlobeBI />
+    "SITE": <GlobeBI  fill={othersColors.white} width={24} height={24} />
 } as Record<AgencySocialMediaPlatforms, React.ReactNode>;

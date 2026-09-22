@@ -9,7 +9,7 @@ export const QUESTIONS = [
   },
   {
     title: "Quem está na presidência da AGM?",
-    text: "Atualmente, o presidente é Alberto Matrilhas e a vice-presidente é Thaís Bellotti.",
+    text: "Atualmente, o presidente é Alberto AGM e a vice-presidente é Thaís Bellotti.",
   },
   {
     title: "Onde fica a sede da AGM?",

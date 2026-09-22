@@ -40,7 +40,7 @@ export function Subscribe() {
                 </div>
                 <div className="mt-6">
                   <h3 className="text-center font-bold text-2xl mb-2">
-                    Matrilhas Plataforma
+                    AGM Plataforma
                   </h3>
                   <span className="text-sm block">
                     {i18n("Components.subscribe.notification_to_you")}

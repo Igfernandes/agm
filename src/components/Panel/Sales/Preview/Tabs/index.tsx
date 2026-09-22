@@ -7,7 +7,7 @@ import { When } from "@components/utilities/When";
 export function SalesTabs({ tabs }: SalePaymentTabProps) {
     const { handleChangeTab, tab } = useTabs()
     const { t } = useI18n()
-    const tabStyled = useRef<string>("text-md md:text-sm xl:text-md px-2 border-primary border border-b-0 rounded-sm cursor-pointer hover:bg-emerald-600 hover:text-white px-2 py-1");
+    const tabStyled = useRef<string>("text-md md:text-sm xl:text-md px-2 border-primary border border-b-0 rounded-sm cursor-pointer hover:bg-rose-600 hover:text-white px-2 py-1");
 
     return (
         <>

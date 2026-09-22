@@ -46,7 +46,7 @@ export function Pagination({ counterRegisters }: Props) {
                   className={`${pagination.current == value
                     ? "bg-primary text-white"
                     : "bg-tertiary text-black"
-                    } px-2 hover:bg-emerald-600 hover:text-white cursor-pointer`}
+                    } px-2 hover:bg-rose-600 hover:text-white cursor-pointer`}
                   onClick={() => handleChangePagination(value)}
                 >
                   <span>{value}</span>

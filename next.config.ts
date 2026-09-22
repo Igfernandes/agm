@@ -16,6 +16,8 @@ const nextConfig: NextConfig = {
         hostname: "www.instagram.com"
       },
       {
+        hostname: "agm.companymarket.com.br/**",
+      },      {
         hostname: "matrilhas.companymarket.com.br/**",
       },
     ],

@@ -1,15 +1,9 @@
-
 export const Validations = {
   required: "O campo é obrigatório",
   boolean: "O valor não é um boleano válido",
-  string: "O valor não é uma string válida",
   email: "O e-mail inserido encontra-se inválido",
-  min_length: "O {{field}} deve conter pelo menos {{length}} caracteres",
-  max_length: "O {{field}} deve conter no máximo {{length}} caracteres",
-  list: "O {{field}} deve ser um dos seguintes valores: {{list}}",
-  number: "O valor não é um número válido",
-  integer: "O valor não é um número inteiro válido",
-  positive_number: "O valor deve ser um número positivo",
+  min_length: "O ${field} deve conter pelo menos ${length} caracteres",
+  max_length: "O ${field} deve conter no máximo ${length} caracteres",
   password_need_equal: "A senha informada deve ser idêntica.",
   has_min_eight_letters: "Pelo menos de 8 caracteres.",
   has_min_one_uppercase: "Pelo menos 1 letra maiúscula.",
@@ -25,10 +19,4 @@ export const Validations = {
   invalid_end_date: "A data de encerramento deve ser maior do que a de início",
   invalid_schedule_linked:
     "O agendamento deve conter pelo menos um usuário vinculado",
-  file_size_exceeded: 'O arquivo "{{name}}" excede {{size}}MB.',
-  file_total_size_exceeded: "O total de arquivos excede {{size}}MB.",
-  required_file: "O arquivo é obrigatório",
-  invalid_file_xls: "O arquivo deve ser do tipo .xls ou .xlsx",
-  cpf: "O CPF inserido encontra-se inválido",
-  enum: "O valor deve ser um dos seguintes: {{list}}",
 };

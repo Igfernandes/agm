@@ -36,7 +36,7 @@ export function Footer({ hasPoliticsCookies = true }: Props) {
             </ul>
           </div>
           <div className="mb-2">
-            <p>© 2024 Matrilhas | {t("Screens.footer.all_rights_reserved")}.</p>
+            <p>© 2024 AGM | {t("Screens.footer.all_rights_reserved")}.</p>
           </div>
         </div>
       </div>

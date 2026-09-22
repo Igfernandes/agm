@@ -96,7 +96,7 @@ export function TourCard({ tour }: Props) {
                     </When>
                     <When value={tour.price === 0 && !!agency}>
                         <Link
-                            href={`https://wa.me/55${agency?.phone}?text=Eu%20acabei%20de%20vir%20do%20site%20do%20Matrilhas%20e%20tenho%20interesse%20em%20reservar%20${tour.title}`}
+                            href={`https://wa.me/55${agency?.phone}?text=Eu%20acabei%20de%20vir%20do%20site%20do%20AGM%20e%20tenho%20interesse%20em%20reservar%20${tour.title}`}
                             className="border-primary mr-1 text-primary disabled:bg-zinc-300 disabled:cursor-not-allowed disabled:text-zinc-400 disabled:no-underline border underline font-semibold w-full block text-center py-1 rounded-md">
                             {t("Words.reserve")}
                         </Link>

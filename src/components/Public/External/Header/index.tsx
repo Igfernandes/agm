@@ -20,7 +20,7 @@ export function Header() {
               <div className="mr-4">
                 <Link href={"/"}>
                   <Image
-                    src={"/imgs/matrilhas-500x500.png"}
+                    src={"/imgs/logotype.png"}
                     width={53}
                     height={56}
                     alt="logotipo AGM"
@@ -31,22 +31,22 @@ export function Header() {
                 <MenuBI fill={othersColors.primary} width={50} height={50} className="md:hidden" onClick={() => setOpenMenu(!openMenu)} />
                 <ul className={`md:flex ${openMenu ? "block" : "hidden"} absolute md:relative mt-0 w-[8rem] md:w-auto md:h-auto h-[8rem] rounded-md bg-white  shadow-sm shadow-black  p-2 md:p-0 md:shadow-none`}>
                   <li className="mx-2 my-2">
-                    <Link className="font-bold text-primary hover:text-emerald-500" href={"/#about_us"}>
+                    <Link className="font-bold text-primary hover:text-rose-500" href={"/#about_us"}>
                       <span>{t("Texts.about_us")}</span>
                     </Link>
                   </li>
                   <li className="mx-2 my-2">
-                    <Link className="font-bold text-primary hover:text-emerald-500" href={"/#agencies"}>
+                    <Link className="font-bold text-primary hover:text-rose-500" href={"/#agencies"}>
                       <span>{t("Words.agencies")}</span>
                     </Link>
                   </li>
                   <li className="mx-2 my-2">
-                    <Link className="font-bold text-primary hover:text-emerald-500" href={"/tours"}>
+                    <Link className="font-bold text-primary hover:text-rose-500" href={"/tours"}>
                       <span>{t("Words.tours")}</span>
                     </Link>
                   </li>
                   <li className="mx-2 my-2">
-                    <Link className="font-bold text-primary hover:text-emerald-500" href={"/galleries"}>
+                    <Link className="font-bold text-primary hover:text-rose-500" href={"/galleries"}>
                       <span>{t("Words.galleries")}</span>
                     </Link>
                   </li>

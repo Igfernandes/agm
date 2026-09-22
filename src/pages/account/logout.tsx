@@ -25,7 +25,7 @@ export default function Logout() {
             src={"/imgs/logotype.png"}
             width={250}
             height={200}
-            alt="Logotype da Matrilhas"
+            alt="Logotype da AGM"
             className="mx-auto"
           />
         </div>

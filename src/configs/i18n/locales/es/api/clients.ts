@@ -19,7 +19,7 @@ export const ClientsApiTranslations = {
   },
   subscribes: {
     success: {
-      post: "¡Matrilhas agradece su inscripción y lo mantendrá informado sobre todas las novedades!",
+      post: "¡AGM agradece su inscripción y lo mantendrá informado sobre todas las novedades!",
     },
     invalid: {
       name: "Es obligatorio completar su nombre",

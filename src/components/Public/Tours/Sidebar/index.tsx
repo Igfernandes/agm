@@ -61,7 +61,7 @@ export function TourSidebar({ tours, onFilters }: Props) {
                     </div>
 
                     <div className="mt-6">
-                        <Button text={t("Texts.apply_filters")} />
+                        <Button className="text-white" text={t("Texts.apply_filters")} />
                     </div>
                 </div>
             </form>

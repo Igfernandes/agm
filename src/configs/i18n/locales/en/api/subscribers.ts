@@ -1,6 +1,6 @@
 export const SubscribersApiTranslations = {
   success: {
-    post: "Matrilhas thanks you for your subscription and will keep you informed about all updates",
+    post: "AGM thanks you for your subscription and will keep you informed about all updates",
     delete: "The subscriber was successfully deleted!",
   },
   invalid: {

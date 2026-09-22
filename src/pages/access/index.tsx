@@ -19,7 +19,7 @@ export default function Access({ csrf }: LoginPageProps) {
         </div>
         <div className="container h-[63vh]  flex items-center mx-auto my-6">
           <div className="row flex items-center shadow  relative  justify-between w-[80%] mx-auto py-8 px-6 rounded-md">
-            <div className="bg-emerald-800 opacity-70 absolute top-0 left-0 w-full h-full rounded-md z-[0]"></div>
+            <div className="bg-rose-800 opacity-70 absolute top-0 left-0 w-full h-full rounded-md z-[0]"></div>
 
             <div className="relative z-10 w-full h-full md:w-[45%] px-2 mx-auto">
               <AccessContent csrf={csrf} />

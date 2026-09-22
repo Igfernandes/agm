@@ -31,7 +31,7 @@ export function Sidebar({ handleToggleSidebar, showSidebar }: Props) {
       <div className=" pt-4 h-[90vh]">
         <div className="flex justify-between border-b-2 border-secondary pb-4 mb-3 px-4">
           <div className="w-full text-center">
-            <Image src={"/imgs/logotype-vertical-green.png"} alt="Logo" className="w-[8rem] mx-auto" width={300} height={300} />
+            <Image src={"/imgs/logo-horizontal.png"} alt="Logo" className="w-[8rem] mx-auto" width={300} height={300} />
           </div>
           <div className="cursor-pointer">
             <Bars onClick={handleToggleSidebar} />

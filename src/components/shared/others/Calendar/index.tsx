@@ -87,7 +87,7 @@ export const Calendar: React.FC<CalendarProps> = ({
       components={components}
       eventPropGetter={(event) => ({
         style: {
-          backgroundColor: event ? "#125520" : "#ff9900",
+          backgroundColor: event ? "#980031" : "#ff9900",
           color: "#fff",
         },
       })}
