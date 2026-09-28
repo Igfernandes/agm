@@ -5,7 +5,6 @@ import { useMemo, useState } from "react";
 import { DispatcherUpdatePayload, DispatcherUpdateSchema } from "../schemas";
 import { MessagesDispatcherShape } from "@type/MessagesDispatcherShape";
 import usePutMessagesDispatcher from "@services/Dispatchers/Put/usePut";
-import useGetClientsDispatchers from "@services/Clients/Dispatchers/Get/useGet";
 
 dayjs.extend(customParseFormat);
 
@@ -19,11 +18,9 @@ export function useForms({ dispatcher }: Props) {
       schema: DispatcherUpdateSchema,
       defaultValues: dispatcher,
     });
-  const { data: clientsDispatchersData } = useGetClientsDispatchers({
-    message_id: dispatcher.id,
-  });
 
-  const clientsDispatchers = useMemo(() => clientsDispatchersData || [], [clientsDispatchersData]);
+
+  const clientsDispatchers = useMemo(() =>  [], []);
 
   const [isShowModal, setIsShowModal] = useState<boolean>(false);
   const { mutateAsync: putDispatcher, isPending: isLoading } =

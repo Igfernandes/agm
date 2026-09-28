@@ -9,6 +9,8 @@ import { FormProvider } from "react-hook-form";
 import { SmartTable } from "@components/shared/layouts/Tables/presets/SmartTable";
 import { Button } from "@components/shared/forms/Button";
 import { useI18n } from "@contexts/I18n";
+import { API_ROUTES } from "@configs/routes/Api/api";
+import { ClientsMessagesDispatcherShape } from "@type/MessagesDispatcherShape/ClientsMessagesDispatcher";
 
 type Props = {
   dispatcher: MessagesDispatcherShape;
@@ -19,7 +21,6 @@ export function DispatcherPreview({ dispatcher }: Props) {
   const { t } = useI18n()
   const {
     formMethods,
-    clientsDispatchers,
     isLoading,
     handleSubmit,
     submit,
@@ -31,7 +32,31 @@ export function DispatcherPreview({ dispatcher }: Props) {
     <>
       <div className="Logs mb-4">
         <SmartTable
-          options={{}}
+          ajax={{
+            key: "clients_dispatcher",
+            url: `${API_ROUTES.clientsDispatchers}`,
+            builder: (client: unknown) => {
+              const clientMessageEntity = client as ClientsMessagesDispatcherShape
+
+              return {
+                name: clientMessageEntity.client_name,
+                message: clientMessageEntity.message_title,
+                status: t(`Words.${clientMessageEntity.status.toLocaleLowerCase()}`),
+                platform: clientMessageEntity.platform,
+                send_at: clientMessageEntity?.send_at
+                  ? dayjs(clientMessageEntity?.send_at).format("DD/MM/YYYY HH:MM")
+                  : "--",
+              }
+            }
+          }}
+          options={{
+            pagination: {
+              max: 10
+            },
+            filters: {
+              message_id: dispatcher.id
+            }
+          }}
           tHeads={{
             data: [
               t("Words.name"),
@@ -41,15 +66,6 @@ export function DispatcherPreview({ dispatcher }: Props) {
               t("Texts.send_at"),
             ],
           }}
-          data={clientsDispatchers.map((client) => ({
-            name: client.client_name,
-            message: client.message_title,
-            status: t(`Words.${client.status.toLocaleLowerCase()}`),
-            platform: client.platform,
-            send_at: client?.send_at
-              ? dayjs(client?.send_at).format("DD/MM/YYYY HH:MM")
-              : "--",
-          }))}
           title={t("Texts.dispatchers_historic")}
         />
       </div>

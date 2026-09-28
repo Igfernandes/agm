@@ -28,6 +28,7 @@ export default function useGetTable(
     enabled: true,
   });
 
+
   return useMemo(
     () => ({
       rows: (data?.rows ?? []) as Array<Record<string, unknown>>,

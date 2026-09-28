@@ -5,7 +5,7 @@ import { useRoutes } from "@hooks/useRoutes";
 import { ClientsMessagesDispatcherShape } from "@type/MessagesDispatcherShape/ClientsMessagesDispatcher";
 
 export default function useGet() {
-  const { clientsDispatchers } = API_ROUTES;
+  const { clientsDispatchersId } = API_ROUTES;
   const { axios } = useAxios();
   const { setParams, setQueries } = useRoutes();
 
@@ -15,7 +15,7 @@ export default function useGet() {
     return await axios.get<ClientsMessagesDispatcherShape[]>(
       setQueries({
         url: setParams({
-          url: clientsDispatchers,
+          url: clientsDispatchersId,
           data: {
             id: id ?? "",
           },
