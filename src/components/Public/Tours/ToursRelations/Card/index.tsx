@@ -11,7 +11,6 @@ import dayjs from "dayjs"
 import { useI18n } from "@contexts/I18n"
 import { useSalesContext } from "@components/Public/Sales/context"
 import { TicketPerforatedBI } from "@assets/Icons/black/TicketPerforatedBI"
-import { useMemo } from "react"
 
 type Props = {
     tour: TourPreviewShape
@@ -20,7 +19,6 @@ type Props = {
 export function TourCard({ tour }: Props) {
     const { handleTargetTour } = useSalesContext();
     const { t } = useI18n()
-    const agency = useMemo(() => tour?.agencies?.[0], [tour]);
 
     return (
         <div className="min-h-[90vh] flex flex-col justify-between my-5 md:my-0 shadow-sm p-2 border-2 border-zinc-200 rounded-lg bg-white mx-4 md:mx-1">
@@ -86,21 +84,13 @@ export function TourCard({ tour }: Props) {
                     <span className="text-warning inline-block ml-2">{tour.promotional_price ? " Por " + formatMoney(tour.promotional_price, tour.currency) : ""}</span>
                 </div>
                 <div className="flex mt-4">
-                    <When value={tour.price > 0}>
-                        <button
-                            disabled={!tour.is_available_for_sale}
-                            onClick={() => handleTargetTour(tour.id)} type="button"
-                            className="border-primary mr-1 text-primary disabled:bg-zinc-300 disabled:cursor-not-allowed disabled:text-zinc-400 disabled:no-underline border underline font-semibold w-full block text-center py-1 rounded-md">
-                            {tour.is_available_for_sale ? t("Words.reserve") : t("Words.shortly")}
-                        </button>
-                    </When>
-                    <When value={tour.price === 0 && !!agency}>
-                        <Link
-                            href={`https://wa.me/55${agency?.phone}?text=Eu%20acabei%20de%20vir%20do%20site%20do%20AGM%20e%20tenho%20interesse%20em%20reservar%20${tour.title}`}
-                            className="border-primary mr-1 text-primary disabled:bg-zinc-300 disabled:cursor-not-allowed disabled:text-zinc-400 disabled:no-underline border underline font-semibold w-full block text-center py-1 rounded-md">
-                            {t("Words.reserve")}
-                        </Link>
-                    </When>
+                    <button
+                        disabled={!tour.is_available_for_sale}
+                        onClick={() => handleTargetTour(tour.id)} type="button"
+                        className="border-primary mr-1 text-primary disabled:bg-zinc-300 disabled:cursor-not-allowed disabled:text-zinc-400 disabled:no-underline border underline font-semibold w-full block text-center py-1 rounded-md">
+                        {tour.is_available_for_sale ? t("Words.reserve") : t("Words.shortly")}
+                    </button>
+
                     <Link className="bg-primary text-white underline font-semibold w-full block text-center py-1 rounded-md" href={`/tours/${tour.slug}`}>
                         {t("Texts.see_more")}
                     </Link>

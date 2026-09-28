@@ -33,7 +33,7 @@ export const ChargeSchema = (t: TFunction) =>
         return value.map((v) => Number(v)).filter((v) => Number.isInteger(v));
       }, z.array(z.number().int()))
       .optional(),
-    period: z.string({ required_error: t("Validations.required") }).optional(),
+    period: optionalNumber(t("Validations.required")),
     amount: optionalNumber(t("Validations.required")),
     price: z.number({ required_error: t("Validations.required") }),
     started_at: z
@@ -42,9 +42,7 @@ export const ChargeSchema = (t: TFunction) =>
     expired_days: z
       .number({ required_error: t("Validations.required") })
       .optional(),
-    promotional_price: z.number({
-      required_error: t("Validations.required"),
-    }),
+    promotional_price: optionalNumber(t("Validations.required")),
   });
 
 export type ChargesPayload = z.infer<ReturnType<typeof ChargeSchema>>;
