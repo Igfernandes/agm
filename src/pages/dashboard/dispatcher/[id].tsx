@@ -20,6 +20,7 @@ export const getServerSideProps: GetServerSideProps<
 > = async ({ params, req }) => {
   const tokenNavigation = req.cookies["token_navigation"] ?? "";
   const { id } = params as { id: string };
+  
   const { rows: dispatchers } = await getMessagesDispatcherRequest(tokenNavigation, {
     id: parseInt(id),
   });

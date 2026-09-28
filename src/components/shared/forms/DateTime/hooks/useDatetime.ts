@@ -7,6 +7,7 @@ export function useDatetime() {
 
   const handleUpdateDatetimePreview = useCallback((value: string) => {
     const normalized = value.replace("T", " ");
+    
     const date = dayjs(normalized, "YYYY-MM-DD HH:mm", true);
 
     if (!date.isValid()) {

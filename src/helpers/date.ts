@@ -1,7 +1,11 @@
 import i18n from "@configs/i18n";
 import { handleSnackbar } from "./snackbar";
 
-export const handleMaskDate = (event: React.KeyboardEvent<HTMLInputElement>|React.ChangeEvent<HTMLInputElement>) => {
+export const handleMaskDate = (
+  event:
+    | React.KeyboardEvent<HTMLInputElement>
+    | React.ChangeEvent<HTMLInputElement>,
+) => {
   let value = event.currentTarget.value.replace(/\D/g, ""); // Remove tudo que não for número
 
   if (value.length > 2) {
@@ -10,7 +14,7 @@ export const handleMaskDate = (event: React.KeyboardEvent<HTMLInputElement>|Reac
     value = getDateWithDayValid(
       dateStringUpdated,
       i18n("Configs.format.separator"),
-      +i18n("Configs.format.day_position")
+      +i18n("Configs.format.day_position"),
     );
   }
 
@@ -19,7 +23,7 @@ export const handleMaskDate = (event: React.KeyboardEvent<HTMLInputElement>|Reac
     value = getDateWithMonthValid(
       dateStringUpdated,
       i18n("Configs.format.separator"),
-      +i18n("Configs.format.month_position")
+      +i18n("Configs.format.month_position"),
     );
   }
 
@@ -27,17 +31,17 @@ export const handleMaskDate = (event: React.KeyboardEvent<HTMLInputElement>|Reac
     value = getDateWithYearValid(
       value,
       i18n("Configs.format.separator"),
-      +i18n("Configs.format.year_position")
+      +i18n("Configs.format.year_position"),
     );
 
   event.currentTarget.value = value;
-  return value
+  return value;
 };
 
 export const getDateWithMonthValid = (
   date: string,
   separator: string,
-  position: number
+  position: number,
 ) => {
   const dateParts = date.split(separator);
   const month = +dateParts[position];
@@ -51,7 +55,7 @@ export const getDateWithMonthValid = (
 export const getDateWithYearValid = (
   date: string,
   separator: string,
-  position: number
+  position: number,
 ) => {
   const dateParts = date.split(separator);
   const year = +dateParts[position];
@@ -67,7 +71,7 @@ export const getDateWithYearValid = (
 export const getDateWithDayValid = (
   date: string,
   separator: string,
-  position: number
+  position: number,
 ) => {
   const dateParts = date.split(separator);
   const day = +dateParts[position];
@@ -93,7 +97,7 @@ export const getMaskDate = (value: string) => {
 };
 
 export const handleMaskDatetime = (
-  event: React.ChangeEvent<HTMLInputElement>
+  event: React.ChangeEvent<HTMLInputElement>,
 ) => {
   const value = event.target.value.replace(/\D/g, ""); // Remove tudo que não for número
   let datetime = "";
@@ -150,7 +154,7 @@ export function isDayValid(day: number) {
 }
 
 export const getFormattedDatetime = (
-  event: React.ChangeEvent<HTMLInputElement>
+  event: React.ChangeEvent<HTMLInputElement>,
 ) => {
   const value = event.target.value.replace(/\D/g, ""); // Remove tudo que não for número
   let datetime = "";
@@ -181,6 +185,7 @@ export const getDatetime = (datetime: string) => {
   datetime = datetime.replace(/\D/g, ""); // Remove tudo que não for número
   let datetimeUpdated = "";
 
+  console.log("lenght", datetime.length);
   if (datetime.length <= 2) {
     datetimeUpdated = datetime;
   } else if (datetime.length <= 4) {
@@ -192,6 +197,15 @@ export const getDatetime = (datetime: string) => {
       datetime.slice(2, 4) +
       "/" +
       datetime.slice(4);
+  } else if (datetime.length <= 10) {
+    datetimeUpdated =
+      datetime.slice(0, 2) +
+      "/" +
+      datetime.slice(2, 4) +
+      "/" +
+      datetime.slice(4, 8) +
+      " " +
+      datetime.slice(8, 10);
   } else {
     datetimeUpdated =
       datetime.slice(0, 2) +
@@ -202,7 +216,7 @@ export const getDatetime = (datetime: string) => {
       " " +
       datetime.slice(8, 10) +
       ":" +
-      datetime.slice(10, 12);
+      datetime.slice(10);
   }
 
   return datetimeUpdated;

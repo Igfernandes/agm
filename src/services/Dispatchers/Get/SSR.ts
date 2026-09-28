@@ -12,11 +12,11 @@ export async function getMessagesDispatcherRequest(
 ): Promise<GetMessagesDispatcherResponse> {
   const { id, ...query } = request ?? {};
 
-  const { messagesDispatcher } = API_ROUTES;
+  const { messagesDispatcherId } = API_ROUTES;
   const { data } = await axios.get<GetMessagesDispatcherResponse>(
     setQueries({
       url: setParams({
-        url: messagesDispatcher,
+        url: messagesDispatcherId,
         data: {
           id: id ?? "",
         },
