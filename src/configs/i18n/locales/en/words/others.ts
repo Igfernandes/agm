@@ -8,6 +8,7 @@ export const OthersTranslations = {
   more: "More",
   client: "Client",
   main: "Main",
+  exhausted: "Exhausted",
   sales: "Sales",
   management: "Management",
   schedule: "Schedule",

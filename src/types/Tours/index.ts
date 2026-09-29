@@ -45,6 +45,7 @@ export type TourPreviewShape = Omit<
     start: string;
     end: string;
   };
+  sales: number;
   agencies?: Array<{
     name: string;
     phone: string;

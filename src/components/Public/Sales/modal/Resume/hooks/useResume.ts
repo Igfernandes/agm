@@ -11,19 +11,23 @@ dayjs.extend(customParseFormat);
 
 export function useResume() {
   const { tour } = useSalesContext();
-  const { mutateAsync: postResume, data, isPending: isLoadingResume } = usePostSaleResume();
+  const {
+    mutateAsync: postResume,
+    data,
+    isPending: isLoadingResume,
+  } = usePostSaleResume();
   const { getValues } = useFormContext();
 
   const resume = useMemo(() => {
     return data?.resume;
   }, [data]);
-  
+
   const price = useMemo(() => {
     if (!tour) return 0;
 
     const pricePromotional = tour?.promotional_price ?? 0;
 
-    return pricePromotional > 0 ? pricePromotional : tour?.price ?? 0;
+    return pricePromotional > 0 ? pricePromotional : (tour?.price ?? 0);
   }, [tour]);
 
   const amountPaid = useMemo(() => {
@@ -56,9 +60,11 @@ export function useResume() {
       dependents: payload.dependents?.map((dependent) => ({
         name: dependent.name,
         cpf: dependent.cpf,
-        birthdate: dayjs(dependent.birthdate, "DD/MM/YYYY").format(
-          "YYYY-MM-DD"
-        ),
+        birthdate: dayjs(
+          String(dependent.birthdate).trim(),
+          ["DD/MM/YYYY", "YYYY-MM-DD"],
+          true,
+        ).format("YYYY-MM-DD"),
       })),
       tour_id: tour?.id,
     });
@@ -69,6 +75,6 @@ export function useResume() {
     amountPaid,
     hasResidency,
     price,
-    isLoadingResume
+    isLoadingResume,
   };
 }

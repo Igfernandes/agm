@@ -5,12 +5,16 @@ import { useDependents } from "./hooks/useDependents";
 import { useStep } from "./hooks/useStep";
 import { When } from "@components/utilities/When";
 import { Preview } from "./preview";
+import { useMemo } from "react";
 
 export function Dependents() {
-    const { handleStep } = useSalesContext()
+    const { handleStep, tour } = useSalesContext()
     const { t } = useI18n()
     const { register, handleAddDependent, errors, amount } = useDependents();
     const { handleStepChange, step } = useStep()
+    const total = useMemo(() => {
+        return amount.adults + amount.children + (tour?.sales ?? 0)
+    }, [amount, tour])
 
     return (
         <div className="min-w-[30vw] py-2 mb-3">
@@ -29,11 +33,23 @@ export function Dependents() {
                         <strong>{t("Words.children")}:</strong> {amount.children}
                     </li>
                 </ul>
-                <div className="text-right">
-                    <span onClick={() => handleStepChange(step === "FORM" ? "PREVIEW" : "FORM")} className="text-primary border-primary border py-1 px-2 rounded-md cursor-pointer">
-                        {step === "FORM" ? "Visualizar" : "Adicionar"}
-                    </span>
-                </div>
+                <When value={(tour?.slots ?? 0) > total}>
+                    <div className="text-right">
+                        <span onClick={() => handleStepChange(step === "FORM" ? "PREVIEW" : "FORM")} className="text-primary border-primary border py-1 px-2 rounded-md cursor-pointer">
+                            {step === "FORM" ? "Visualizar" : "Adicionar"}
+                        </span>
+                    </div>
+                </When>
+                <When value={(tour?.slots ?? 0) < total}>
+                    <div className="text-right">
+                        <span onClick={() => handleStepChange("PREVIEW")} className="text-primary border-primary border py-1 px-2 rounded-md cursor-pointer">
+                            {"Visualizar"}
+                        </span>
+                    </div>
+                    <div>
+                        <span>Não há mais vagas disponíveis para essa atividade.</span>
+                    </div>
+                </When>
             </div>
             <When value={step === "FORM"}>
                 <List errors={errors} handleAddDependent={handleAddDependent} register={register} />

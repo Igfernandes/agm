@@ -84,12 +84,22 @@ export function TourCard({ tour }: Props) {
                     <span className="text-warning inline-block ml-2">{tour.promotional_price ? " Por " + formatMoney(tour.promotional_price, tour.currency) : ""}</span>
                 </div>
                 <div className="flex mt-4">
-                    <button
-                        disabled={!tour.is_available_for_sale}
-                        onClick={() => handleTargetTour(tour.id)} type="button"
-                        className="border-primary mr-1 text-primary disabled:bg-zinc-300 disabled:cursor-not-allowed disabled:text-zinc-400 disabled:no-underline border underline font-semibold w-full block text-center py-1 rounded-md">
-                        {tour.is_available_for_sale ? t("Words.reserve") : t("Words.shortly")}
-                    </button>
+                    <When value={tour.sales < (tour.slots ?? 0)}>
+                        <button
+                            disabled={!tour.is_available_for_sale}
+                            onClick={() => handleTargetTour(tour.id)} type="button"
+                            className="border-primary mr-1 text-primary disabled:bg-zinc-300 disabled:cursor-not-allowed disabled:text-zinc-400 disabled:no-underline border underline font-semibold w-full block text-center py-1 rounded-md">
+                            {tour.is_available_for_sale ? t("Words.reserve") : t("Words.shortly")}
+                        </button>
+                    </When>
+                    <When value={tour.sales >= (tour.slots ?? 0)}>
+                        <button
+                            disabled={true}
+                            type="button"
+                            className="border-primary mr-1 text-primary disabled:bg-zinc-300 disabled:cursor-not-allowed disabled:text-zinc-400 disabled:no-underline border underline font-semibold w-full block text-center py-1 rounded-md">
+                            {t("Words.exhausted")}
+                        </button>
+                    </When>
 
                     <Link className="bg-primary text-white underline font-semibold w-full block text-center py-1 rounded-md" href={`/tours/${tour.slug}`}>
                         {t("Texts.see_more")}
