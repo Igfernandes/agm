@@ -34,13 +34,15 @@ export function useForm({ csrf, recaptchaInstance }: Props) {
   } = formMethods;
 
   const onSubmit = async ({ login, password }: PostAuthPayload) => {
-    recaptchaInstance.execute((token) => {
-      postAuth({
+    recaptchaInstance.execute(async (token) => {
+      await postAuth({
         login,
         password,
         recaptcha: token,
         csrf,
       });
+      
+      await recaptchaInstance.reset();
     });
   };
 
