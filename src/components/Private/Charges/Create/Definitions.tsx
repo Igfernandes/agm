@@ -81,7 +81,10 @@ export function Definitions() {
         <When value={watch("type") !== "APPELLANT"}>
           <div className="form-group w-full lg:w-[48%] lg:mt-0">
             <Input
-              {...register("amount")}
+              {...register("amount", {
+                valueAsNumber: true,
+                required: true
+              })}
               dataTestId="amount"
               label={`${t("Texts.charge_amount")}`}
               min={1}
