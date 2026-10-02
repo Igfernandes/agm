@@ -2,7 +2,6 @@ import { DotsOptions } from "@components/shared/others/DotsOptions";
 import { ModalTourOperationType } from "../type";
 import { useRouter } from "next/navigation";
 import { privateRoutes, publicRoutes } from "@configs/routes/Web/navigation";
-import { Shared } from "@components/shared/others/Shared";
 import { PERMISSIONS } from "@constants/permissions";
 import { useUserNavigationContext } from "@contexts/Navigation/User";
 import { useNavigator } from "@hooks/useNavigator";
@@ -28,7 +27,6 @@ export function TourActions({ handleToggleModal, id, slug }: Props) {
 
   return (
     <div className="flex">
-      <Shared entity="TOURS" in_ids={[id]} />
       <DotsOptions
         actions={[
           {

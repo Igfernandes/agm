@@ -60,7 +60,7 @@ export const Screens = {
   },
 
   logout: {
-    text: "Você saiu com segurança. A Matrilhas te espera na próxima! 🐾",
+    text: "Você saiu com segurança. A AGM te espera na próxima! 🐾",
   },
   needs_help: "Precisa de ajuda?",
   dashboard: {
@@ -180,9 +180,9 @@ export const Screens = {
       address_title: "Nosso Endereço",
       address: "São José do Imbassai, Maricá - RJ",
       phone_title: "Fale conosco",
-      phone: "+55 (21) 99507-1974",
+      phone: "+55  (21) 97129-2030",
       email_title: "Nos envie um e-mail",
-      email: "contato@matrilhas.com.br",
+      email: "contato@agmturismomarica.com.br",
     },
     menu: {
       logo: "logotype AGM",
@@ -226,7 +226,7 @@ export const Screens = {
       },
       {
         title: "Comentário do viajante",
-        text: "A Matrilhas está de parabéns! Participar das atividades foi maravilhoso, tudo muito bem planejado e cheio de momentos únicos. Recomendo a todos!",
+        text: "A AGM está de parabéns! Participar das atividades foi maravilhoso, tudo muito bem planejado e cheio de momentos únicos. Recomendo a todos!",
         author: "Jofre Martins",
         info: "Morador de São Gonçalo - RJ",
       },

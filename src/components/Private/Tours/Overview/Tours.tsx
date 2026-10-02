@@ -3,7 +3,6 @@ import { Notice } from "@components/shared/others/Notice";
 import { useModalContext } from "@contexts/Modal";
 import { ModalTourOperationType } from "../type";
 import { SmartTable } from "@components/shared/layouts/Tables/presets/SmartTable";
-import { Shared } from "@components/shared/others/Shared";
 import { PERMISSIONS } from "@constants/permissions";
 import { useUserNavigationContext } from "@contexts/Navigation/User";
 import { API_ROUTES } from "@configs/routes/Api/api";
@@ -59,14 +58,6 @@ export function ToursTable() {
               },
 
             ].filter((action) => hasPermission(action.permissions)),
-            buttons: (
-              <Shared
-                entity="TOURS"
-                in_ids={selectors
-                  .filter((selector) => !!selector.isChecked)
-                  .map((selector) => +selector.value)}
-              />
-            ),
             filters: filters["TOURS"] ?? {},
           }}
           title={t("Words.tours")}

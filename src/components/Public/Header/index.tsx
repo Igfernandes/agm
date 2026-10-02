@@ -71,7 +71,7 @@ export function Header() {
                 width={90}
                 height={80}
                 className="h-16 object-contain"
-                alt="logotype matrilhas"
+                alt="logotype agm"
               />
             </div>
             <div className="hidden md:block">
