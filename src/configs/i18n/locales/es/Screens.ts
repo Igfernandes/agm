@@ -63,7 +63,7 @@ export const Screens = {
 
   needs_help: "¿Necesitas ayuda?",
   logout: {
-    text: "Has cerrado sesión de forma segura. ¡Matrilhas te espera la próxima! 🐾",
+    text: "Has cerrado sesión de forma segura. AGM te espera la próxima! 🐾",
   },
   dashboard: {
     clients: clientsTranslations,
@@ -184,7 +184,7 @@ export const Screens = {
       phone_title: "Contáctanos",
       phone: "+55 (21) 9 9507-1974",
       email_title: "Envíanos un correo",
-      email: "contato@matrilhas.com.br",
+      email: "contato@agmturismomarica.com.br",
     },
     menu: {
       logo: "logotipo AGM",
@@ -228,7 +228,7 @@ export const Screens = {
       },
       {
         title: "Comentario del viajero",
-        text: "¡Matrilhas está de felicitaciones! Participar en las actividades fue maravilloso, todo muy bien planificado y lleno de momentos únicos. ¡Lo recomiendo a todos!",
+        text: "AGM está de felicitaciones! Participar en las actividades fue maravilloso, todo muy bien planificado y lleno de momentos únicos. ¡Lo recomiendo a todos!",
         author: "Jofre Martins",
         info: "Residente de São Gonçalo - RJ",
       },

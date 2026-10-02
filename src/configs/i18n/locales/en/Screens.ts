@@ -61,7 +61,7 @@ export const Screens = {
 
   needs_help: "Need help?",
   logout: {
-    text: "You have logged out safely. Matrilhas awaits you next time! 🐾",
+    text: "You have logged out safely. AGM awaits you next time! 🐾",
   },
   dashboard: {
     clients: clientsTranslations,
@@ -180,9 +180,9 @@ export const Screens = {
       address_title: "Our address",
       address: "São José do Imbassai, Maricá - RJ",
       phone_title: "Contact us",
-      phone: "+55 (21) 99507-1974",
+      phone: "+55 (21) 97129-2030",
       email_title: "Send us an email",
-      email: "contato@matrilhas.com.br",
+      email: "contato@agmturismomarica.com.br",
     },
     menu: {
       logo: "AGM logotype",
@@ -226,7 +226,7 @@ export const Screens = {
       },
       {
         title: "Traveler comment",
-        text: "Matrilhas deserves congratulations! Participating in the activities was wonderful, everything very well planned and full of unique moments. I recommend it to everyone!",
+        text: "AGM deserves congratulations! Participating in the activities was wonderful, everything very well planned and full of unique moments. I recommend it to everyone!",
         author: "Jofre Martins",
         info: "Resident of São Gonçalo - RJ",
       },

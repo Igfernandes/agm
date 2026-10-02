@@ -17,9 +17,7 @@ const nextConfig: NextConfig = {
       },
       {
         hostname: "agm.companymarket.com.br/**",
-      },      {
-        hostname: "matrilhas.companymarket.com.br/**",
-      },
+      }
     ],
   },
 };
