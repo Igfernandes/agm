@@ -122,8 +122,10 @@ export function Definitions() {
           <Input
             {...register("price", {
               valueAsNumber: true,
+              required: true
             })}
             dataTestId="price"
+            required={true}
             step={"0.01"}
             prefix="R$: "
             type="number"

@@ -39,9 +39,7 @@ export const ChargeSchema = (t: TFunction) =>
     started_at: z
       .string({ required_error: t("Validations.required") })
       .optional(),
-    expired_days: z
-      .number({ required_error: t("Validations.required") })
-      .optional(),
+    expired_days:  optionalNumber(t("Validations.required")),
     promotional_price: optionalNumber(t("Validations.required")),
   });
 
