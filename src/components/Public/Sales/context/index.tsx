@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useMemo, useState } from "react";
 import { Sale } from "../modal";
 import { TourPreviewShape } from "@type/Tours";
 import { SaleContextProps, SaleSteps } from "./types";
@@ -9,7 +9,7 @@ type SalesContextType = {
   tour?: TourPreviewShape;
   handleTargetTour: (tour: number | undefined) => void;
   step: SaleSteps;
-  handleStep: (step: SaleSteps) => void; 
+  handleStep: (step: SaleSteps) => void;
   agency_id?: number;
 };
 
@@ -19,16 +19,16 @@ export function SalesProvider({ children, agency_id }: SaleContextProps) {
   const { rows } = useGetToursPreview({
     id: targetTourId
   })
-  const tour = useMemo(() => rows[0], [rows])
+  const tour = useMemo(() => rows.find((tour) => tour.id === targetTourId), [rows, targetTourId])
   const [step, setStep] = useState<SaleSteps>("PERSONAL");
 
-  const handleTargetTour = (tour: number | undefined) => {
+  const handleTargetTour = useCallback((tour: number | undefined) => {
     setTargetTourId(tour);
-  }
+  }, [])
 
-  const handleStep = (step: SaleSteps) => {
+  const handleStep = useCallback((step: SaleSteps) => {
     setStep(step);
-  }
+  }, [])
 
   return (
     <SalesContext.Provider value={{
