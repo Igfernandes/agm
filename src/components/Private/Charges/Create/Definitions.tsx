@@ -65,7 +65,10 @@ export function Definitions() {
         <When value={watch("type") === "APPELLANT"}>
           <div className="w-full md:w-[48%] ">
             <Input
-              {...register("period")}
+              {...register("period", {
+                valueAsNumber: true,
+                required: true
+              })}
               dataTestId="period"
               type="number"
               min={1}

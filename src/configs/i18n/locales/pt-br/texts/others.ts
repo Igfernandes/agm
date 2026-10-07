@@ -23,7 +23,7 @@ export const OthersTextsTranslations = {
   selected_agencies: "Agências Selecionadas",
   link_copy: "Copiar Link",
   general_information: "Informações Gerais",
-  dependencies_historic: "Histórico de dependências",
+  dependencies_historic: "Histórico de pendências",
   payments_historic: "Histórico de Cobranças",
   sales_historic: "Histórico de vendas",
   new_client: "Novo cliente",

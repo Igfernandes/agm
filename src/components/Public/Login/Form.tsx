@@ -70,7 +70,7 @@ export function LoginForm({ csrf }: Props) {
           <Button
             text={isSuccess ? t("Texts.redirect") : t("Words.send")}
             type="submit"
-            isLoading={(isLoading && isRecaptchaLoaded) || isLoading}
+            isLoading={isLoading || isRecaptchaLoaded}
             disabled={!isAllFilled || isSuccess}
           />
         </div>

@@ -113,8 +113,9 @@ export const SaleProfileSchema = (t: TFunction) =>
               field: t("Words.birthdate"),
               length: "22",
             }),
-          }),
-      })
+          }) ,
+          /** @ts-expect-error O objeto abaixo não necessita  */
+      }).default([])
     ),
     contact: z.object({
       name: z
