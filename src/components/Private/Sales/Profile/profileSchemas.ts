@@ -20,8 +20,12 @@ export const SaleProfileSchema = (t: TFunction) =>
           length: "150",
         }),
       }),
-    boarding: z.string({ required_error: t("Validations.required") }),
-    landing: z.string({ required_error: t("Validations.required") }),
+    boarding: z.string({ required_error: t("Validations.required") }).nonempty({
+      message: t("Validations.required")
+    }),
+    landing: z.string({ required_error: t("Validations.required") }).nonempty({
+      message: t("Validations.required")
+    }),
     payment_id: z
       .string({ required_error: t("Validations.required") })
       .max(150, {
