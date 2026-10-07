@@ -9,6 +9,9 @@ export function useProfile() {
     const schema = useMemo(() => SaleProfileSchema(t), [t])
     const { formMethods, handleSubmit, register, errors } = useFormRules<SaleProfilePayload>({
         schema,
+        defaultValues: {
+            dependents: []
+        }
     })
     const { mutateAsync: postSale, isPending: isLoadingPost } = usePostSale();
 
