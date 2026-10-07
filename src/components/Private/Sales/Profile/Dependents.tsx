@@ -14,7 +14,7 @@ export function Dependents() {
 
     const handleRemove = useCallback((index: number) => {
         setAmount((prev) => prev - 1)
-        setValue("dependents", dependents.filter((_: unknown, i: number) => i !== index))
+        setValue("dependents", (dependents ?? []).filter((_, i) => i !== index))
     }, [setValue, dependents])
 
     return (

@@ -114,9 +114,8 @@ export const SaleProfileSchema = (t: TFunction) =>
               length: "22",
             }),
           }) ,
-          /** @ts-expect-error O objeto abaixo não necessita  */
-      }).default([])
-    ),
+      })
+    ).default([]),
     contact: z.object({
       name: z
         .string({ required_error: t("Validations.required") })
