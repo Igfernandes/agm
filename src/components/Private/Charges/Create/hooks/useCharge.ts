@@ -15,6 +15,7 @@ export function useCharge() {
   const { mutateAsync: postCharge, isPending } = usePostCreateCharge();
   const router = useRouter();
 
+  console.log(errors, "errors")
   const submit = ({
     amount,
     period,

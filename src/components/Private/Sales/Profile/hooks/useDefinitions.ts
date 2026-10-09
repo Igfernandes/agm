@@ -17,7 +17,7 @@ export function useDefinitions() {
         text: tour.title,
         value: tour.id,
       })),
-    [dataTours]
+    [dataTours],
   );
   const agencies = useMemo(
     () =>
@@ -25,11 +25,12 @@ export function useDefinitions() {
         text: agency.name,
         value: agency.id,
       })),
-    [dataAgencies]
+    [dataAgencies],
   );
 
   return {
     tours,
     agencies,
+    dataTours,
   };
 }

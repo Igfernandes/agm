@@ -21,8 +21,8 @@ export function SalesProvider({ children, agency_id }: SaleContextProps) {
   })
   const tour = useMemo(() => rows.find((tour) => tour.id === targetTourId), [rows, targetTourId])
   const [step, setStep] = useState<SaleSteps>("PERSONAL");
-
   const handleTargetTour = useCallback((tour: number | undefined) => {
+  
     setTargetTourId(tour);
   }, [])
 
