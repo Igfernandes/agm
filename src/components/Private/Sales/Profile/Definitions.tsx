@@ -4,16 +4,15 @@ import { useDefinitions } from "./hooks/useDefinitions";
 import { Select } from "@components/shared/forms/Select";
 import { useI18n } from "@contexts/I18n";
 import { Input } from "@components/shared/forms/Input";
-import { useAddress } from "@components/Public/Sales/hooks/useAddress";
+import { useAddress } from "./hooks/useAddress";
 
 
 export function Definitions() {
-    const { tours, agencies } = useDefinitions()
+    const { tours, agencies, dataTours } = useDefinitions()
     const { t } = useI18n()
     const { register, formState: { errors } } = useFormContext<SaleProfilePayload>()
-    const { destinyAddresses, originAddresses, builderOption } = useAddress()
+    const { destinyAddresses, originAddresses, builderOption } = useAddress({ tours: dataTours })
 
-    console.log(errors)
     return (
         <div className="mb-5">
             <div className="mb-4">

@@ -91,6 +91,7 @@ export function Definitions() {
               dataTestId="amount"
               label={`${t("Texts.charge_amount")}`}
               min={1}
+              defaultValue={1}
               type="number"
               required={true}
               errors={errors.amount}

@@ -34,7 +34,7 @@ export const ChargeSchema = (t: TFunction) =>
       }, z.array(z.number().int()))
       .optional(),
     period: optionalNumber(t("Validations.required")),
-    amount: z.number({ required_error: t("Validations.required") }),
+    amount: z.number({ required_error: t("Validations.required") }).default(1),
     price: z.number({ required_error: t("Validations.required") }),
     started_at: z
       .string({ required_error: t("Validations.required") })

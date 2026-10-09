@@ -29,6 +29,7 @@ export type TourShape = BaseShape & {
   status: "PUBLISHED" | "DRAFT" | "ARCHIVED";
 
   owner_id?: number;
+  addresses: Omit<TourAddressShape, "updated_at" | "created_at" | "tour_id">[];
 
   created_at: string;
   updated_at: string;
