@@ -16,11 +16,14 @@ export function useAddress({ tours }: Props) {
   }, [tourId, tours]);
 
   const destinyAddresses = useMemo(
-    () => tour?.addresses.filter((address) => address.type === "DESTINY") || [],
+    () =>
+      tour?.addresses
+        ? tour?.addresses.filter((address) => address.type === "DESTINY") || []
+        : [],
     [tour],
   );
   const originAddresses = useMemo(
-    () => tour?.addresses.filter((address) => address.type === "ORIGIN") || [],
+    () => tour?.addresses ? tour?.addresses.filter((address) => address.type === "ORIGIN") || [] : [],
     [tour],
   );
 
