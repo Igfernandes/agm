@@ -4,6 +4,7 @@ import { ProfileFormProps } from "./type";
 import { TextEdit } from "@components/shared/forms/TextEdit";
 import { Datetime } from "@components/shared/forms/DateTime";
 import { useI18n } from "@contexts/I18n";
+import dayjs from "dayjs";
 
 type Props = ProfileFormProps;
 
@@ -59,7 +60,11 @@ export function Information({ register, errors }: Props) {
                         dataTestId="slug"
                         {...register("slug")}
                         label={t("Words.slug")}
+                        defaultValue={t("Words.tour") + dayjs().format("-MM-DD-YYYY-HH-mm-ss")}
+                        readOnly={true}
                         maxLength={30}
+                        placeholder="..."
+                        className="bg-gray-200"
                         errors={errors?.slug}
                     />
                 </div>

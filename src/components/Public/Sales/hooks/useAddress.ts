@@ -7,12 +7,22 @@ export function useAddress() {
   const { tour } = useSalesContext();
 
   const destinyAddresses = useMemo(
-    () => tour?.addresses.filter((address) => address.type === "DESTINY") || [],
-    [tour]
+    () =>
+      tour?.addresses
+        ? Array.from(tour?.addresses).filter(
+            (address) => address.type === "DESTINY",
+          )
+        : [],
+    [tour],
   );
   const originAddresses = useMemo(
-    () => tour?.addresses.filter((address) => address.type === "ORIGIN") || [],
-    [tour]
+    () =>
+      tour?.addresses
+        ? Array.from(tour?.addresses).filter(
+            (address) => address.type === "ORIGIN",
+          )
+        : [],
+    [tour],
   );
 
   const builderOption = useCallback(
@@ -20,7 +30,7 @@ export function useAddress() {
       addresses: Omit<
         TourAddressShape,
         "tour_id" | "updated_at" | "created_at"
-      >[]
+      >[],
     ) => {
       return addresses.map((address) => {
         const addressFormatted = `${address?.complement} - ${address?.city}/${address?.state} - ${address?.country}`;
@@ -31,7 +41,7 @@ export function useAddress() {
         };
       }) as Array<OptionsShape>;
     },
-    []
+    [],
   );
 
   return {

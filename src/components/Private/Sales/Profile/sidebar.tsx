@@ -44,7 +44,7 @@ export function Sidebar({ watch, isLoading }: Props) {
             </div>
             <div className="w-full mt-auto">
                 <div className="w-full ml-auto mt-2  mb-3">
-                    <Button isLoading={isLoading} text={watch('id') ? t("Words.update") : t("Words.create")} />
+                    <Button isLoading={isLoading} className="text-white" text={watch('id') ? t("Words.update") : t("Words.create")} />
                 </div>
             </div>
 
