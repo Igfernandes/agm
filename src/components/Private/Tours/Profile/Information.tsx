@@ -61,7 +61,6 @@ export function Information({ register, errors }: Props) {
                         {...register("slug")}
                         label={t("Words.slug")}
                         defaultValue={t("Words.tour") + dayjs().format("-MM-DD-YYYY-HH-mm-ss")}
-                        readOnly={true}
                         maxLength={30}
                         placeholder="..."
                         className="bg-gray-200"
