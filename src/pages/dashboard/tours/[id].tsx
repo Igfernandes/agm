@@ -12,6 +12,7 @@ import { TourAgencies } from "@components/Private/Tours/Agencies";
 import { TourGallery } from "@components/Private/Tours/Gallery";
 import { TourLanding } from "@components/Private/Tours/Landing";
 import { TourBoarding } from "@components/Private/Tours/Boarding";
+import TourSales from "@components/Private/Tours/Sales/TourSales";
 
 export default function TourUpdate({ targetTour }: TourPageProps) {
   return (
@@ -24,6 +25,7 @@ export default function TourUpdate({ targetTour }: TourPageProps) {
         RULES: <TourRules tour={targetTour} />,
         GALLERY: <TourGallery tour={targetTour} />,
         AGENCIES: <TourAgencies tour={targetTour} />,
+        SALES: <TourSales tour={targetTour} />
       }} />
     </DashboardContainer>
   );

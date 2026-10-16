@@ -33,6 +33,9 @@ export function ToursTabs({ tabs }: TourTabProps) {
                     <li className={`${tabStyled.current} ${tab === "AGENCIES" ? "bg-primary text-white" : "text-primary bg-white"}`} onClick={() => handleChangeTab("AGENCIES")}>
                         <a className="tab-link">{t("Words.agencies")}</a>
                     </li>
+                    <li className={`${tabStyled.current} ${tab === "SALES" ? "bg-primary text-white" : "text-primary bg-white"}`} onClick={() => handleChangeTab("SALES")}>
+                        <a className="tab-link">{t("Words.sales")}</a>
+                    </li>
                 </ul>
             </div>
             <div>
