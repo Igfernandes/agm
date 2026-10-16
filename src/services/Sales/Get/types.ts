@@ -3,6 +3,7 @@ import { GetRequestShape } from "@type/service";
 
 export type GetSalesRequest = GetRequestShape & {
   id?: number;
+  tour_id?: number;
 };
 
 export type GetSalesResponse = {

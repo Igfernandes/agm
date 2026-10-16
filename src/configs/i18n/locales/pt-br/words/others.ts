@@ -1,4 +1,5 @@
 export const OthersTranslations = {
+  free: "Gratuidade",
   code: "Código",
   galleries: "Galerias",
   cover: "Capa",
