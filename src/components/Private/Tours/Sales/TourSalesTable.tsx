@@ -55,7 +55,7 @@ export function TourSalesTable({ tour }: Props) {
               {
                 handle: () =>
                   postExport({
-                    entity: "SALES",
+                    entity: "INSCRIBES",
                     in_ids: salesIdsAll,
                     type: "PDF"
                   }),
@@ -65,7 +65,7 @@ export function TourSalesTable({ tour }: Props) {
               {
                 handle: () =>
                   postExport({
-                    entity: "SALES",
+                    entity: "INSCRIBES",
                     in_ids: salesIdsAll,
                     type: "EXCEL"
                   }),
@@ -75,7 +75,7 @@ export function TourSalesTable({ tour }: Props) {
             ].filter((action) => hasPermission(action.permissions)),
             buttons: (
               <Shared
-                entity="SALES"
+                entity="INSCRIBES"
                 in_ids={targetSelectors}
               />
             ),
