@@ -30,7 +30,7 @@ export function useForm({ csrf, recaptchaInstance }: Props) {
   const {
     handleSubmit,
     register,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = formMethods;
 
   const onSubmit = async ({ login, password, rememberMe }: PostAuthPayload) => {
@@ -52,7 +52,7 @@ export function useForm({ csrf, recaptchaInstance }: Props) {
     errors,
     formMethods,
     isAllFilled,
-    isLoading: isSubmitting || isLoading,
+    isLoading: isLoading,
     isSuccess,
   };
 }

@@ -11,9 +11,6 @@ const nextConfig: NextConfig = {
         hostname: "192.168.1.5/**",
       },
       {
-        hostname: "0.0.0.0/**",
-      },
-      {
         hostname: "www.instagram.com",
       },
       {
