@@ -24,7 +24,7 @@ export const OthersTextsTranslations = {
   link_copy: "Copiar Link",
   general_information: "Informações Gerais",
   dependencies_historic: "Histórico de pendências",
-  payments_historic: "Histórico de Cobranças",
+  payments_historic: "Histórico de Pagamentos",
   sales_historic: "Histórico de vendas",
   new_client: "Novo cliente",
   is_valid: "É valido?",
