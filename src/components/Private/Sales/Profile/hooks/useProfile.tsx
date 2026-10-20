@@ -3,6 +3,7 @@ import { useCallback, useMemo } from "react"
 import { SaleProfilePayload, SaleProfileSchema } from "../profileSchemas"
 import usePostSale from "@services/Sales/Post/usePost"
 import { useI18n } from "@contexts/I18n"
+import { PostCreateSalePayload } from "@services/Sales/Post/type"
 
 export function useProfile() {
     const { t } = useI18n();
@@ -15,13 +16,23 @@ export function useProfile() {
     })
     const { mutateAsync: postSale, isPending: isLoadingPost } = usePostSale();
 
-    const onSubmit = useCallback(async (payload: SaleProfilePayload) => {
-        postSale({
-            ...payload,
-            contacts: [payload.contacts]
-        })
-    }, [postSale])
+    const onSubmit = useCallback(
+        async (payload: SaleProfilePayload) => {
+            const salePayload: PostCreateSalePayload = {
+                ...payload,
+                contacts: [
+                    {
+                        name: payload.contacts.name,
+                        relation: payload.contacts.relation,
+                        phone: payload.contacts.phone,
+                    },
+                ],
+            };
 
+            await postSale(salePayload);
+        },
+        [postSale]
+    );
     return {
         formMethods,
         handleSubmit,
