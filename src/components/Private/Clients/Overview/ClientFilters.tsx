@@ -26,7 +26,7 @@ export function ClientFilters() {
                     <span className="text-xs text-disabled ml-1">{t("Screens.dashboard.clients.partial_name_search")}</span>
                 </div>
                 <div className="w-full md:w-[48%] my-2">
-                    <Input maxLength={15} {...register("cpf")} onChangeCapture={handleMaskCPF} dataTestId="filter-cpf" label={t("Words.cpf")} />
+                    <Input maxLength={15} {...register("cpf")} onChangeCapture={handleMaskCPF} onKeyUp={handleMaskCPF} dataTestId="filter-cpf" label={t("Words.cpf")} />
                     <span className="text-xs text-disabled ml-1">{t("Screens.dashboard.clients.complete_cpf_value")}</span>
                 </div>
                 <div className="w-full md:w-[48%] my-2">

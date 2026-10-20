@@ -13,7 +13,7 @@ export function OptionsBar() {
 
   return (
     <>
-      <div className="relative z-10  flex justify-between flex-wrap md:flex-nowrap mb-6">
+      <div className="relative z-[30]  flex justify-between flex-wrap md:flex-nowrap mb-6">
         <div className="w-full md:w-[45%] xl:w-[25%]">
           <ClientFilters />
         </div>
