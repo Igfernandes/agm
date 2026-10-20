@@ -16,7 +16,10 @@ export function useProfile() {
     const { mutateAsync: postSale, isPending: isLoadingPost } = usePostSale();
 
     const onSubmit = useCallback(async (payload: SaleProfilePayload) => {
-        postSale(payload)
+        postSale({
+            ...payload,
+            contacts: [payload.contacts]
+        })
     }, [postSale])
 
     return {
