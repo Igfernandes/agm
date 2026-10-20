@@ -2,14 +2,7 @@ import { SaleShape } from "@type/Sales";
 
 export type PostCreateSalePayload = Omit<
   SaleShape,
-  | "id"
-  | "amount"
-  | "agency"
-  | "client"
-  | "tour"
-  | "bank"
-  | "created_at"
-  | "updated_at"
+  "id"  |"amount" | "agency" | "client" | "tour" | "bank" | "created_at" | "updated_at"
 > & {
   agency_id?: number;
   tour_id: number;
@@ -17,11 +10,11 @@ export type PostCreateSalePayload = Omit<
   cpf: string;
   email: string;
   phone: string;
-  contacts: Array<{
+  contacts: {
     name: string;
     relation: string;
     phone: string;
-  }>;
+  };
   country: string;
   state: string;
   city: string;

@@ -21,10 +21,10 @@ export function Contact({ errors }: Props) {
             </div>
             <div className="flex flex-wrap justify-between">
                 <div className="w-full my-2">
-                    <Input required={true} maxLength={100} dataTestId="name" {...register("contact.name")} label={t("Words.name")} errors={errors?.contact?.name} />
+                    <Input required={true} maxLength={100} dataTestId="name" {...register("contacts.name")} label={t("Words.name")} errors={errors?.contacts?.name} />
                 </div>
                 <div className="w-full md:w-[48%] my-2">
-                    <Phone required={true} dataTestId="phone" {...register("contact.phone")}  label={`${t("Words.phone")}/Whatsapp`} errors={errors?.contact?.phone} />
+                    <Phone required={true} dataTestId="phone" {...register("contacts.phone")}  label={`${t("Words.phone")}/Whatsapp`} errors={errors?.contacts?.phone} />
                 </div>
                 <div className="w-full md:w-[48%] my-2">
                     <Select required={true} options={[
@@ -36,7 +36,7 @@ export function Contact({ errors }: Props) {
                             text: t(`Words.${kinship.toLowerCase()}`),
                             value: kinship
                         }))
-                    ]}  {...register("contact.relation")} label={t("Words.kinship")} dataTestId="sale_kinship" />
+                    ]}  {...register("contacts.relation")} label={t("Words.kinship")} dataTestId="sale_kinship" />
                 </div>
             </div>
         </div>

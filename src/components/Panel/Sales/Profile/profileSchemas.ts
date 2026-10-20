@@ -116,7 +116,7 @@ export const SaleProfileSchema = (t: TFunction) =>
           }),
       })
     ),
-    contact: z.object({
+    contacts: z.object({
       name: z
         .string({ required_error: t("Validations.required") })
         .min(3, {
