@@ -11,9 +11,9 @@ type Props = {
 export function Pagination({ counterRegisters }: Props) {
   const arrowStyled =
     useRef<string>("bg-secondary border-dark border px-2 text-center py-1 hover:bg-black-400");
-  const { pagination, handleChangePagination, tRows} = useTableContext();
+  const { pagination, handleChangePagination, tRows } = useTableContext();
   const { displayedPages, displayedGroupPage, amountGroups } = usePagination();
-
+ 
   return (
     <div className="flex justify-between mt-3">
       <div>

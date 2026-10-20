@@ -10,7 +10,7 @@ export type PostCreateSalePayload = Omit<
   cpf: string;
   email: string;
   phone: string;
-  contact: {
+  contacts: {
     name: string;
     relation: string;
     phone: string;

@@ -14,7 +14,7 @@ export function OptionsBar() {
             className="border border-zinc-300 px-3 font-bold rounded-xl bg-secondary text-primary"
             text={t("Texts.schedule_event")}
             type="button"
-            onClick={() => handleToggleModal("SCHEDULE")}
+            onClick={() => handleToggleModal("SCHEDULE", '')}
           />
         </div>
       </div>
