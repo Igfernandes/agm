@@ -8,11 +8,14 @@ export const ClientsApiTranslations = {
       id: "La categoría proporcionada no existe o es inválida",
       client_id: "El cliente proporcionado no existe o es inválido",
       name: "El nombre de la categoría proporcionada es inválido",
+      cpf: "El CPF ya está en uso o es incorrecto",
       name_contains: "El nombre de la categoría proporcionada es inválido",
-      description_contains: "La descripción de la categoría proporcionada es inválida",
+      description_contains:
+        "La descripción de la categoría proporcionada es inválida",
       created_at: "La fecha de creación de la categoría es inválida",
       updated_at: "La fecha de actualización de la categoría es inválida",
-      categories: "Las categorías proporcionadas están ausentes o son inválidas",
+      categories:
+        "Las categorías proporcionadas están ausentes o son inválidas",
       linked_category:
         "Desvincule las categorías de los clientes antes de eliminarlas",
     },
@@ -83,7 +86,8 @@ export const ClientsApiTranslations = {
     email_max_length_255:
       "El cliente contiene un correo electrónico que supera el límite máximo de 255 caracteres.",
     created_at: "La fecha de creación proporcionada del cliente es inválida",
-    updated_at: "La fecha de actualización proporcionada del cliente es inválida",
+    updated_at:
+      "La fecha de actualización proporcionada del cliente es inválida",
     not_found_category: "La categoría oculta es inválida o no está disponible",
   },
 };

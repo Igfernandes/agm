@@ -29,6 +29,7 @@ export function GalleryCreateModal() {
                   label={t("Words.title")}
                   dataTestId="title"
                   required={true}
+                  min={3}
                   errors={errors.title}
                 />
               </div>

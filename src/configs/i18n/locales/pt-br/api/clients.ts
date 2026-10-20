@@ -8,6 +8,7 @@ export const ClientsApiTranslations = {
       id: "A categoria informado não existe ou está inválido",
       client_id: "O cliente informado não existe ou está inválido",
       name: "O nome da categoria informada está inválido",
+      cpf: "O cpf encontra-se utilizado ou incorreto",
       name_contains: "O nome da categoria informada está inválido",
       description_contains: "A descrição da categoria informada está inválida",
       created_at: "A data de criação da categoria está inválida",

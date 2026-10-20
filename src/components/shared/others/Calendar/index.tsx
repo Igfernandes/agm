@@ -64,8 +64,9 @@ type CalendarProps = {
 
 export type HandleChangeRangeProps = Date[] | { start: Date; end: Date };
 
-const localizer = momentLocalizer(moment);
 moment.locale("pt-br");
+const localizer = momentLocalizer(moment);
+
 
 export const Calendar: React.FC<CalendarProps> = ({
   events,
