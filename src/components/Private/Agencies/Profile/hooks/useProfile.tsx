@@ -17,7 +17,7 @@ export function useProfile({ agency = {} as AgencyShape }: Props = {} as Props) 
     const { formMethods, handleSubmit, register, errors } = useFormRules<AgencyProfilePayload>({
         schema: schema,
         defaultValues: {
-            ...agency,
+            ...(Object.fromEntries(Object.entries(agency).filter(([index, value]) => !!index && !!value))),
             phone: getNumberFormatted(agency.phone),
             cnpj: getCNPJFormatted(agency.cnpj),
         }

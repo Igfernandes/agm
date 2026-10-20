@@ -25,7 +25,7 @@ export const AgencyProfileSchema = (t: TFunction) =>
       })
       .default("ACTIVE"),
     email: z
-      .string({ required_error: t("Validations.required") }).nullable()
+      .string({ required_error: t("Validations.required") })
       .optional() // Permite que o campo seja omitido ou vazio
       .or(z.literal("")) // Permite string vazia ("")
       .refine((email) => email === "" || REGEXES.EMAIL.test(`${email}`), {
@@ -55,7 +55,7 @@ export const AgencyProfileSchema = (t: TFunction) =>
       .optional(),
     logotype: z
       .string({ required_error: t("Validations.required") })
-      .optional().nullable(),
+      .optional(),
     address: z.object({
       country: z.string({ required_error: t("Validations.required") }),
       state: z.string({ required_error: t("Validations.required") }),
