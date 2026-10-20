@@ -25,7 +25,10 @@ export function useModal() {
   const schema = useMemo(() => ScheduleSchema(t), [t]);
   const { userAuth } = useUserNavigationContext();
   const [step, setStep] = useState<"INFORMATION" | "USERS">("INFORMATION");
-  const scheduleCurrent = useMemo(() => schedules?.[0], [schedules]);
+  const scheduleCurrent = useMemo(
+    () => (modal.id ? schedules?.[0] : null),
+    [schedules, modal.id],
+  );
   const { formMethods, handleSubmit } = useFormRules<SchedulePayload>({
     schema,
     defaultValues: {
@@ -111,11 +114,10 @@ export function useModal() {
 
       handleToggleModal(false);
     },
-    [modal, putSchedule, postSchedule, handleToggleModal]
+    [modal, putSchedule, postSchedule, handleToggleModal],
   );
 
   useEffect(() => {
-
     reset({
       ...scheduleCurrent,
       linked: scheduleCurrent?.linked?.map((user) => String(user.id)) || [],

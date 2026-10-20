@@ -41,7 +41,7 @@ export function useTableData<TableData extends Array<Record<string, unknown>>>({
       const newOffset = rowsReads / paginationMax;
       const offsetTotal = refRows.current.length / paginationMax;
 
-      if (newOffset >= offsetTotal - 2 && newOffset !== offset) {
+      if (newOffset >= offsetTotal  && newOffset !== offset) {
         setOffset(rowsReads);
       }
     },
