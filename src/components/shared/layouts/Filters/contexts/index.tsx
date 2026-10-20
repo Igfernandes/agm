@@ -25,7 +25,7 @@ function FiltersProvider({ children, id }: FiltersContextProps) {
       const filters = prev;
       if (filters[id] === newFilters) return prev;
 
-      filters[id] = newFilters
+      filters[id] = Object.fromEntries(Object.entries(newFilters).filter((filter) => !!filter))
       return filters;
     });
     methods.reset();
