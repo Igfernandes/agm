@@ -81,6 +81,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <When value={!!maxLength}>
             <span className="absolute right-4 bottom-[.65rem] text-xs">{value?.length ?? 0}/{maxLength}</span>
           </When>
+          <When value={!!maxLength}>
+            <span className="absolute right-4 bottom-[.65rem] text-xs">{value?.length ?? 0}/{maxLength}</span>
+          </When>
         </div>
         <ErrorMessage errors={errors?.message} />
       </>

@@ -6,7 +6,7 @@ export const GalleryProfileSchema = (t: TFunction) =>
     id: z.number().optional(),
     title: z
       .string({ required_error: t("Validations.string") })
-      .min(1, {
+      .min(3, {
         message: t("Validations.min_length", {
           field: t("Words.title"),
           length: "1",
