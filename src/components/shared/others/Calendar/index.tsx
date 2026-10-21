@@ -7,6 +7,7 @@ import {
   ViewsProps,
 } from "react-big-calendar";
 import moment from "moment";
+import "moment/locale/pt-br";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import i18n from "@configs/i18n";
 
@@ -80,6 +81,7 @@ export const Calendar: React.FC<CalendarProps> = ({
 }) => {
   return (
     <CalendarLibrary
+      culture="pt-BR"
       localizer={localizer}
       onRangeChange={onChangeRange}
       events={events}
