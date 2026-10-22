@@ -6,7 +6,7 @@ import { z } from "zod";
 export const formsSchema = (t: TFunction) =>
   z
     .object({
-      id: z.number().optional(),
+      id: optionalNumber(t("Validations.number")),
 
       name: z
         .string({ required_error: t("Validations.required") })
@@ -32,16 +32,7 @@ export const formsSchema = (t: TFunction) =>
         }),
       }),
 
-      stock: z
-        .number({ required_error: i18n("Validations.required") })
-        .int()
-        .min(0, {
-          message: i18n("Validations.min_value", {
-            field: i18n("Words.stock"),
-            value: "0",
-          }),
-        })
-        .default(0),
+      stock: optionalNumber(t("Validations.number")).default(0),
       template: optionalNumber(),
       category: optionalNumber(),
       color_mark: z

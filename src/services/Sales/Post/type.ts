@@ -12,7 +12,7 @@ export type PostCreateSalePayload = Omit<
   phone: string;
   contacts: {
     name: string;
-    relation: string;
+    kinship: string;
     phone: string;
   };
   country: string;

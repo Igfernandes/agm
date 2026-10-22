@@ -149,7 +149,7 @@ export const SaleProfileSchema = (t: TFunction) =>
             length: "22",
           }),
         }),
-      relation: z
+      kinship: z
         .string({ required_error: t("Validations.required") })
         .min(3, {
           message: t("Validations.min_length", {
