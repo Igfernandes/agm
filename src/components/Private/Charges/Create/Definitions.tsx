@@ -13,6 +13,7 @@ export function Definitions() {
     register,
     formState: { errors },
   } = useFormContext<ChargesPayload>();
+  const type = watch("type");
 
   return (
     <div className="bg-white  py-4 px-6 rounded-xl mb-6">
@@ -62,12 +63,12 @@ export function Definitions() {
         </div>
       </div>
       <div className="form-row flex flex-wrap mb-6 justify-between">
-        <When value={watch("type") === "APPELLANT"}>
+        <When value={type === "APPELLANT"}>
           <div className="w-full md:w-[48%] ">
             <Input
               {...register("period", {
                 valueAsNumber: true,
-                required: true
+                required: true,
               })}
               dataTestId="period"
               type="number"
@@ -81,7 +82,7 @@ export function Definitions() {
             </span>
           </div>
         </When>
-        <When value={watch("type") !== "APPELLANT"}>
+        <When value={type !== "APPELLANT"}>
           <div className="form-group w-full lg:w-[48%] lg:mt-0">
             <Input
               {...register("amount", {

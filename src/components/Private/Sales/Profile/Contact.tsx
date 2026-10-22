@@ -36,7 +36,7 @@ export function Contact({ errors }: Props) {
                             text: t(`Words.${kinship.toLowerCase()}`),
                             value: kinship
                         }))
-                    ]}  {...register("contacts.relation")} label={t("Words.kinship")} dataTestId="sale_kinship" />
+                    ]}  {...register("contacts.kinship")} label={t("Words.kinship")} dataTestId="sale_kinship" />
                 </div>
             </div>
         </div>

@@ -1,4 +1,5 @@
 export const Validations = {
+  document: "The CPF is invalid or has an incorrect format",
   required: "This field is required",
   boolean: "The value is not a valid boolean",
   email: "The email address entered is invalid",

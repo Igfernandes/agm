@@ -89,12 +89,7 @@ export const TourProfileSchema = (t: TFunction) =>
 
     rating: z.any().optional(),
 
-    slots: z
-      .number({
-        invalid_type_error: t("Api.tours.invalid.slots"),
-      })
-      .optional(),
-
+    slots: optionalNumber(t("Validations.number")),
     featured: z
       .enum(["1", "0"], {
         required_error: t("Validations.list", {

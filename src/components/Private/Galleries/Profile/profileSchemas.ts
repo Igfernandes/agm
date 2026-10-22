@@ -9,7 +9,7 @@ export const GalleryProfileSchema = (t: TFunction) =>
       .min(3, {
         message: t("Validations.min_length", {
           field: t("Words.title"),
-          length: "1",
+          length: "3",
         }),
       })
       .max(200, {

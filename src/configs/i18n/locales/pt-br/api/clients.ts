@@ -73,6 +73,8 @@ export const ClientsApiTranslations = {
     clients: "Os clientes informados encontram-se inexistentes ou inválidos",
     category: "A categoria do cliente informada encontra-se vazia ou inválida",
     name: "O nome informado do cliente encontra-se inválido",
+    imports:
+      "Existem alguns registros sem nome ou telefone ou cpf e não foram possíveis ser cadastrados",
     name_max_length_100:
       "O cliente contém nome com o limite acima do máximo de 100 caracteres.",
     avatar: "O avatar do cliente contém uma url inválida",

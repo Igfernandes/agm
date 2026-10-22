@@ -24,7 +24,7 @@ export function useModalForm() {
     if (!Validations.cpf(payload.cpf))
       return setError("cpf", {
         type: "manual",
-        message: t("Validations.cpf"),
+        message: t("Validations.document"),
       });
 
     postCreateClient({

@@ -79,15 +79,6 @@ export function FormBoard({ charge }: Props) {
           errors={errors.promotional_price?.message}
           type="number"
         />
-        <TDatetime
-          label={t("Words.started_at")}
-          name={"started_at"}
-          step={"0.01"}
-          prefix="R$: "
-          dataTestId="started_at"
-          errors={errors.started_at?.message}
-          type="number"
-        />
         <TNumber
           label={t("Texts.expired_days")}
           name={"expired_days"}
