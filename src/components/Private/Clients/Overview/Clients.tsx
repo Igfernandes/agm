@@ -13,6 +13,7 @@ import { ImportModal } from "./Modals/Import";
 import { API_ROUTES } from "@configs/routes/Api/api";
 import { useFiltersContext } from "@components/shared/layouts/Filters/contexts";
 import { useI18n } from "@contexts/I18n";
+import { useMemo } from "react";
 
 export function Clients() {
   const { t } = useI18n()
@@ -30,6 +31,12 @@ export function Clients() {
     useModalContext<ModalClientsOperationType>();
   const { hasPermission } = useUserNavigationContext();
   const { filters } = useFiltersContext();
+  const inIds = useMemo(() => {
+    const idList = selectors
+      .filter((selector) => !!selector.isChecked)
+      .map((selector) => +selector.value)
+    return idList.length > 0 ? idList : [-1]
+  }, [selectors])
 
   return (
     <>
@@ -83,9 +90,7 @@ export function Clients() {
             buttons: (
               <Shared
                 entity="CLIENTS"
-                in_ids={selectors
-                  .filter((selector) => !!selector.isChecked)
-                  .map((selector) => +selector.value)}
+                in_ids={inIds}
               />
             ),
             filters: filters["CLIENTS"] ?? {},
