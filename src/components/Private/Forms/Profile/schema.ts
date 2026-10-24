@@ -55,8 +55,8 @@ export const formsSchema = (t: TFunction) =>
     })
     .refine(
       (data) =>
-        data.expired_at &&
-        data.started_at &&
+        !data.expired_at ||
+        !data.started_at ||
         new Date(data.expired_at) > new Date(data.started_at),
       {
         message: i18n("Validations.invalid_date_range"),
