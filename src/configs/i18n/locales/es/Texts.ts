@@ -12,6 +12,7 @@ export const Texts = {
   back_page: "Volver a la página anterior",
   created_new_password: "Crear nueva contraseña",
   new_password: "Nueva contraseña",
+  end_price: "Valor Final",
   created_account: "Cuenta creada",
   search_by_title: "Buscar por título",
   created_password: "Contraseña creada",

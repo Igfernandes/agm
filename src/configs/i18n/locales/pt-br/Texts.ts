@@ -13,6 +13,7 @@ export const Texts = {
   new_password: "Nova senha",
   created_account: "Conta criada",
   search_by_title: "Pesquisar por título",
+  end_price: "Valor Final",
   created_password: "Senha criada",
   unknown_operation: "Operação desconhecida",
   go_back_login: "Voltar para o login",

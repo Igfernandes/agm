@@ -13,6 +13,7 @@ export const Texts = {
   new_password: "New password",
   created_account: "Account created",
   search_by_title: "Search by title",
+  end_price: "End Price",
   created_password: "Password created",
   unknown_operation: "Unknown operation",
   go_back_login: "Back to login",

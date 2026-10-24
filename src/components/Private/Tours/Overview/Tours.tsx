@@ -12,7 +12,7 @@ import { useI18n } from "@contexts/I18n";
 export function ToursTable() {
   const { t } = useI18n()
   const {
-    handleDelete, isLoadingDelete, tHeads, selectors, setSelectors, updateForTable, getSelected
+    handleDelete, isLoadingDelete, tHeads, updateForTable
   } = useTours();
   const { handleToggleModal, modal } =
     useModalContext<ModalTourOperationType>();
@@ -29,23 +29,9 @@ export function ToursTable() {
             builder: updateForTable
           }}
           options={{
-            selector: {
-              setSelectorRef: setSelectors,
-            },
             pagination: {
               max: 6,
             },
-            actionsBar: [
-              {
-                handle: () =>
-                  handleToggleModal(
-                    "DELETE",
-                    getSelected(selectors)
-                  ),
-                text: t("Texts.selected_delete"),
-                permissions: [PERMISSIONS.tours.delete],
-              },
-            ].filter((action) => hasPermission(action.permissions)),
             actions: [
               {
                 handle: () =>

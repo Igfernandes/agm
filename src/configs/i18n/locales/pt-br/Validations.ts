@@ -20,4 +20,6 @@ export const Validations = {
   invalid_end_date: "A data de encerramento deve ser maior do que a de início",
   invalid_schedule_linked:
     "O agendamento deve conter pelo menos um usuário vinculado",
+  invalid_date_range:
+    "A data de finalização precisa ser superior a de inscrição ou valor válido",
 };
