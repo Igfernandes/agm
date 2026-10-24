@@ -1,8 +1,7 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo } from "react";
 import {
   ModalTourOperationType,
 } from "../../type";
-import { SelectorShape } from "@components/shared/layouts/Selector/type";
 import { useModalContext } from "@contexts/Modal";
 import { TourActions } from "../ToursActions";
 import dayjs from "dayjs";
@@ -16,8 +15,6 @@ export function useTours() {
   const { t } = useI18n()
   const { handleToggleModal, modal } =
     useModalContext<ModalTourOperationType>();
-  /** Esse sim precisa ser state */
-  const [selectors, setSelectors] = useState<SelectorShape[]>([]);
 
   const { mutateAsync: deleteTour, isPending: isLoadingDelete } =
     useDeleteTours();
@@ -67,22 +64,11 @@ export function useTours() {
     deleteTour(payload).then(() => handleToggleModal(false));
   }, [deleteTour, modal.id, handleToggleModal])
 
-  const getSelected = useCallback((selectors: SelectorShape[]) => {
-    return selectors
-      .filter((s) => s.value !== "all" && s.isChecked)
-      .map((s) => s.value)
-      .join(",");
-  }, []);
-
-
 
   return {
     tHeads,
-    selectors,
     handleDelete,
     isLoadingDelete,
     updateForTable,
-    setSelectors,
-    getSelected
   };
 }

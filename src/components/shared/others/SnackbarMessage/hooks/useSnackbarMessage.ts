@@ -26,8 +26,6 @@ export default function useSnackbarMessage({
     if (!snackbar.message) return;
     setShow(true);
 
-    if (typeSnackbar === "notice") return;
-
     const interval = setInterval(() => {
       const threshold = Date.now() - TIME_TO_LIVE_NOTIFICATION_IN_MS;
       const snackbarUpdate = (snackbar: SnackbarProps) => {
@@ -36,16 +34,11 @@ export default function useSnackbarMessage({
       };
 
       snackbarUpdate(snackbar);
-    }, 1000);
+    }, 2000);
 
     setTypeSnackbar(snackbar.type);
     return () => clearInterval(interval);
-  }, [
-    TIME_TO_LIVE_NOTIFICATION_IN_MS,
-    handleDeleteSnackbar,
-    snackbar,
-    typeSnackbar,
-  ]);
+  }, [TIME_TO_LIVE_NOTIFICATION_IN_MS, handleDeleteSnackbar, snackbar]);
 
   return { show, handleDeleteSnackbar, typeSnackbar };
 }

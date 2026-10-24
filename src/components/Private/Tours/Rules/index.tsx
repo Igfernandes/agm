@@ -106,7 +106,7 @@ export function TourRules({ tour }: Props) {
                             </div>
                             <When value={actionInAddress === "PRICE"}>
                                 <div className="w-full md:w-[100%] my-2">
-                                    <Input type="number" dataTestId="rule_1_price" {...register("rule.1.price")} label={i18n("Words.price")} errors={errors?.rule?.[1]?.price} />
+                                    <Input type="number" dataTestId="rule_1_price" {...register("rule.1.price")} label={i18n("Texts.end_price")} errors={errors?.rule?.[1]?.price} />
                                 </div>
                             </When>
                             <div className="w-full md:w-[100%] my-2">
