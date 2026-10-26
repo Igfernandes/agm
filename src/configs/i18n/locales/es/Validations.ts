@@ -11,6 +11,7 @@ export const Validations = {
   has_min_one_uppercase: "Al menos 1 letra mayúscula",
   has_min_one_lowercase: "Al menos 1 letra minúscula",
   has_min_one_number: "Al menos 1 número",
+  number: "El número ingresado no es válido o no existe.",
   has_min_one_special_character: "Al menos 1 carácter especial",
   invalid_date_range:
     "La fecha de finalización debe ser posterior a la fecha de inscripción o un valor válido.",

@@ -90,6 +90,19 @@ export function ClientCreateModal({
                 />
               </div>
               <div className="form-group my-4">
+                <Input
+                  {...register("phone")}
+                  label={t("Words.phone")}
+                  dataTestId="phone"
+                  required={true}
+                  onChange={(ev) => {
+                    handleMaskPhone(ev);
+                    setValue("phone", ev.currentTarget.value);
+                  }}
+                  errors={errors.phone}
+                />
+              </div>
+              <div className="form-group my-4">
                 <Date
                   {...register("birthdate")}
                   label={t("Words.birthdate")}
@@ -105,18 +118,6 @@ export function ClientCreateModal({
                   dataTestId="email"
                   maxLength={250}
                   errors={errors.email}
-                />
-              </div>
-              <div className="form-group my-4">
-                <Input
-                  {...register("phone")}
-                  label={t("Words.phone")}
-                  dataTestId="phone"
-                  onChange={(ev) => {
-                    handleMaskPhone(ev);
-                    setValue("phone", ev.currentTarget.value);
-                  }}
-                  errors={errors.phone}
                 />
               </div>
             </div>

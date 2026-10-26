@@ -11,9 +11,12 @@ export const Texts = {
   back_page: "Back to previous page",
   created_new_password: "Create new password",
   new_password: "New password",
+  excel_example: "Example Excel",
   created_account: "Account created",
   search_by_title: "Search by title",
   end_price: "End Price",
+  download_for_example_excel:
+    "Click the link to download an example Excel file for data import.",
   created_password: "Password created",
   unknown_operation: "Unknown operation",
   go_back_login: "Back to login",

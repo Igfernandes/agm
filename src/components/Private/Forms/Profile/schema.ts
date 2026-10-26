@@ -50,18 +50,12 @@ export const formsSchema = (t: TFunction) =>
 
       description: z.string().nullable().optional(),
 
-      started_at: z.string().optional(),
-      expired_at: z.string().optional(),
+      started_at: z.string(),
+      expired_at: z.string(),
     })
-    .refine(
-      (data) =>
-        !data.expired_at ||
-        !data.started_at ||
-        new Date(data.expired_at) > new Date(data.started_at),
-      {
-        message: i18n("Validations.invalid_date_range"),
-        path: ["expired_at"],
-      },
-    );
+    .refine((data) => new Date(data.expired_at) > new Date(data.started_at), {
+      message: i18n("Validations.invalid_date_range"),
+      path: ["expired_at"],
+    });
 
 export type FormsPayload = z.infer<ReturnType<typeof formsSchema>>;

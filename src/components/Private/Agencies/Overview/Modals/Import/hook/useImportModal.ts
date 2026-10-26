@@ -1,6 +1,6 @@
 import { useFormRules } from "@hooks/Forms/useFormRules";
 import { ImportPayload, ImportSchema } from "../schemas";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { ImportModalsProps } from "../type";
 import { useI18n } from "@contexts/I18n";
 import usePostImportAgency from "@services/Agencies/Import/usePost";
@@ -33,11 +33,17 @@ export function useImportModal({ onModal }: ImportModalsProps) {
     onModal(false);
   };
 
+  const handleCleanFile = useCallback(() => {
+    formMethods.resetField("excel");
+  }, [formMethods]);
+
   return {
     register,
     handleSubmit,
     onSubmit,
     fileName,
     isLoading,
+    handleCleanFile,
+    excel: fileList,
   };
 }

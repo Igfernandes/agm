@@ -10,6 +10,7 @@ export const Validations = {
   has_min_eight_letters: "At least 8 characters",
   has_min_one_uppercase: "At least 1 uppercase letter",
   has_min_one_lowercase: "At least 1 lowercase letter",
+  number: "The number entered is invalid or does not exist.",
   invalid_date_range:
     "The end date must be later than the registration date or a valid value.",
   has_min_one_number: "At least 1 number",

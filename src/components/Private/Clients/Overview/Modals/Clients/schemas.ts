@@ -21,7 +21,7 @@ export const ClientCreateSchema = (t: TFunction) => z.object({
       message: t("Validations.email"),
     }),
   hasContinueRegister: z.boolean(),
-  phone: z.string({ required_error: t("Validations.required") }).optional(),
+  phone: z.string({ required_error: t("Validations.required") }),
   cpf: z
     .string({ required_error: t("Validations.required") })
     .nonempty(t("Validations.required")),
