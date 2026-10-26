@@ -20,6 +20,7 @@ export const InvitesApiTranslations = {
     email_contains: "O e-mail informado está inválido",
     phone: "O telefone informado encontra-se inválido",
     not_found: "O convite não foi encontrado",
+    invalid_groups: "O grupo do usuário é obrigatório.",
     is_valid: "O convite já foi utilizado ou está expirado",
     created_at: "A data de criação do convite está inválida",
     expired_at: "A data de expiração do convite está inválida",

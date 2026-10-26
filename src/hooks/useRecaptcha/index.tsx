@@ -32,6 +32,15 @@ export function useRecaptcha() {
             setIsRecaptchaLoaded(false)
             recaptchaInstance.reset();
           }}
+          onError={() => {
+            setIsRecaptchaLoaded(false)
+            recaptchaInstance.reset();
+          }}
+          onExpire={() => {
+            setIsRecaptchaLoaded(false)
+            recaptchaInstance.reset();
+          }}
+
           onClose={() => {
             setIsRecaptchaLoaded(false)
             recaptchaInstance.reset();
@@ -45,5 +54,5 @@ export function useRecaptcha() {
     )
   }
 
-  return { recaptchaInstance, isRecaptchaLoaded, Recaptcha };
+  return { recaptchaInstance, isRecaptchaLoaded, setIsRecaptchaLoaded, Recaptcha };
 }

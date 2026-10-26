@@ -4,7 +4,7 @@ import usePostAuth from "../../../../services/Authentications/Auth/usePostAuth";
 import { useFormRules } from "@hooks/Forms/useFormRules";
 import { CSRFShape } from "@services/Authentications/CSRF/types";
 import { useI18n } from "@contexts/I18n";
-import { useMemo } from "react";
+import { Dispatch, SetStateAction, useMemo } from "react";
 type Payload = PostAuthPayload;
 
 type Props = {
@@ -13,9 +13,14 @@ type Props = {
     execute: (callback: (token: string) => void) => void;
     reset: () => void | undefined;
   };
+  setIsRecaptchaLoaded: Dispatch<SetStateAction<boolean>>;
 };
 
-export function useForm({ csrf, recaptchaInstance }: Props) {
+export function useForm({
+  csrf,
+  recaptchaInstance,
+  setIsRecaptchaLoaded,
+}: Props) {
   const {
     mutateAsync: postAuth,
     isPending: isLoading,
@@ -35,13 +40,18 @@ export function useForm({ csrf, recaptchaInstance }: Props) {
 
   const onSubmit = async ({ login, password, rememberMe }: PostAuthPayload) => {
     recaptchaInstance.execute(async (token) => {
-      await postAuth({
-        login,
-        password,
-        rememberMe,
-        recaptcha: token,
-        csrf,
-      });
+      await postAuth(
+        {
+          login,
+          password,
+          rememberMe,
+          recaptcha: token,
+          csrf,
+        },
+        {
+          onError: () => setIsRecaptchaLoaded(false),
+        },
+      );
       await recaptchaInstance.reset();
     });
   };

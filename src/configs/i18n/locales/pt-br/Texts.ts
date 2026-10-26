@@ -11,6 +11,8 @@ export const Texts = {
   back_page: "Voltar pra página anterior",
   created_new_password: "Criar nova senha",
   new_password: "Nova senha",
+  excel_example: "Excel de Exemplo",
+  download_for_example_excel: "Clique no link para baixar um arquivo Excel de exemplo para importação.",
   created_account: "Conta criada",
   search_by_title: "Pesquisar por título",
   end_price: "Valor Final",
@@ -56,7 +58,7 @@ export const Texts = {
   continue_register: "Continuar cadastrando",
   keep_creating: "Continuar criando",
   service_image: "Imagem do serviço",
-  text_upload: "Clique para adicionar uma imagem",
+  text_upload: "Clique para adicionar um arquivo",
   allowed_formats_image: "Formatos aceitos: PDF, PNG e JPEG",
   allowed_formats_excel: "Formatos aceitos: Excel",
   allowed_size_image: "Tamanho máximo aceito: 5MB",
@@ -90,5 +92,4 @@ export const Texts = {
   select_category: "Selecionar categoria",
   select_status: "Selecionar status",
   selected_alter_category: "Alterar categorias selecionadas",
-  
 };

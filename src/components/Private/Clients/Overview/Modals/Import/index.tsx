@@ -4,20 +4,29 @@ import { CloudUpload } from "@assets/Icons/black/CloudUpload";
 import { ImportModalsProps } from "./type";
 import { useImportModal } from "./hook/useImportModal";
 import { useI18n } from "@contexts/I18n";
+import { When } from "@components/utilities/When";
+import { Close } from "@assets/Icons/black/CloseClean";
 
 export function ImportModal({ onModal, isShowModal }: ImportModalsProps) {
   const { t } = useI18n()
-  const { register, handleSubmit, onSubmit, fileName, isLoading } =
+  const { register, handleSubmit, onSubmit, fileName, isLoading, handleCleanFile, watch } =
     useImportModal({
       onModal,
       isShowModal,
     });
+
+  const excel = watch("excel")
 
   return (
     <Modal title={t("Screens.dashboard.clients.clients_importer")} isShowModal={isShowModal} handleModal={onModal}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="max-w-[400px]">
           <div>
+            <When value={!!excel}>
+              <div>
+                <Close onClick={handleCleanFile} className="w-5 z-50 absolute right-6 top-1 cursor-pointer" />
+              </div>
+            </When>
             <label
               htmlFor={"#import"}
               className="max-h-[104px] md:w-[376px] relative mx-auto block border rounded-lg border-dashed border-secondary px-0 pb-5 pt-4 text-center cursor-pointer"
@@ -46,6 +55,10 @@ export function ImportModal({ onModal, isShowModal }: ImportModalsProps) {
                 {t(`Texts.allowed_size_image`)}
               </p>
             </div>
+          </div>
+          <div className="text-xs text-center mt-2">
+            <span>{t(`Texts.download_for_example_excel`)}:</span>
+            <a href="/example/client-import.xlsx" download className="text-red">{t(`Texts.excel_example`)}</a>
           </div>
         </div>
         <div className="flex justify-between border-t-2 border-secondary mt-6 pt-4">

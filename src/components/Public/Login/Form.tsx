@@ -15,7 +15,7 @@ type Props = {
 };
 
 export function LoginForm({ csrf }: Props) {
-  const { Recaptcha, recaptchaInstance, isRecaptchaLoaded } = useRecaptcha()
+  const { Recaptcha, recaptchaInstance, isRecaptchaLoaded, setIsRecaptchaLoaded } = useRecaptcha()
   const {
     handleSubmit,
     register,
@@ -24,7 +24,7 @@ export function LoginForm({ csrf }: Props) {
     isLoading,
     errors,
     isSuccess
-  } = useForm({ csrf, recaptchaInstance });
+  } = useForm({ csrf, recaptchaInstance, setIsRecaptchaLoaded });
   const { forgotPassword } = publicRoutes;
   const { t } = useI18n()
 

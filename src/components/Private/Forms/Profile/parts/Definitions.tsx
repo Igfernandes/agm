@@ -92,17 +92,23 @@ export function Definitions({ handleChangeFormFields, slug }: Props) {
       <div className="flex flex-wrap md:flex-nowrap my-4">
         <div className="form-group w-full md:w-1/2 md:mr-2">
           <Datetime
-            {...register("started_at")}
+            {...register("started_at", {
+              required: true
+            })}
             label={t("Texts.started_inscribed")}
             dataTestId="started_at"
+            required={true}
             errors={errors.started_at}
           />
         </div>
         <div className="form-group w-full my-4 md:my-auto md:w-1/2 md:ml-2">
           <Datetime
-            {...register("expired_at")}
+            {...register("expired_at", {
+              required: true
+            })}
             label={t("Texts.final_inscribed")}
-            dataTestId="expired_at"
+            dataTestId="expired_at" required={true}
+
             errors={errors.expired_at}
           />
         </div>

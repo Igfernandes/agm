@@ -23,6 +23,9 @@ export const Texts = {
   price_until: "Precio hasta",
   apply_filters: "Aplicar filtros",
   agencies_relations: "Agencias vinculadas",
+  excel_example: "Excel de Exemplo",
+  download_for_example_excel:
+    "Haz clic en el enlace para descargar un archivo Excel de ejemplo para la importación.",
   discount_by_years: "Descuento por edad",
   list_linked_agencies: "Lista de agencias vinculadas",
   home_page: "Página de inicio",

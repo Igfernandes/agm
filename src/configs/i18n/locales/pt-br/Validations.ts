@@ -11,6 +11,7 @@ export const Validations = {
   has_min_one_lowercase: "Pelo menos 1 letra minúscula.",
   has_min_one_number: "Pelo menos 1 número.",
   has_min_one_special_character: "Pelo menos 1 caracteres especial.",
+  number: "O número inserido é inválido ou não existe.",
   invalid_file:
     "O arquivo encontra-se maior de 5 megas, corrompido ou com formato inválido",
   invalid_day: "O dia inserido encontra-se inválido",
