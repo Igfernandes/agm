@@ -76,14 +76,10 @@ export const TourProfileSchema = (t: TFunction) =>
       .default("REAL"),
 
     available_at: z
-      .string({ message: t("Validations.string") })
-      .optional()
-      .or(z.literal("")),
+      .string({ message: t("Validations.string") }),
 
     unavailable_at: z
-      .string({ message: t("Validations.string") })
-      .optional()
-      .or(z.literal("")),
+      .string({ message: t("Validations.string") }),
 
     video: z.string().optional().or(z.literal("")),
 

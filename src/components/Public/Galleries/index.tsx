@@ -20,12 +20,12 @@ export function Galleries() {
                     <h1 className="text-3xl text-primary font-bold">{t("Screens.galleries.title")}</h1>
                     <p>{t("Screens.galleries.description")}</p>
                 </div>
-                <div className="flex flex-wrap ">
+                <div className="flex flex-wrap justify-around">
                     <Skeleton isLoading={isLoading} settings={{
                         type: "board"
                     }}>
                         {galleries.map(gallery => (
-                            <div key={gallery.id} className=" w-[15rem] shadow-sm shadow-zinc-500 mx-2">
+                            <div key={gallery.id} className="my-2 w-[15rem] shadow-sm shadow-zinc-500 mx-2">
                                 <div className="p-1">
                                     <Image src={gallery.cover || "/imgs/illustration.png"} className="h-[25vh] object-cover" width={400} height={400} alt={gallery.title} />
                                 </div>

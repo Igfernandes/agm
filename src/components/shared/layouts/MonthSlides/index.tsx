@@ -8,9 +8,10 @@ import { othersColors } from "@assets/colors/colors";
 
 type Props = {
     handleChangeMonth: Dispatch<SetStateAction<number>>
+    target: number
 }
 
-export function MonthSlides({ handleChangeMonth }: Props) {
+export function MonthSlides({ handleChangeMonth, target }: Props) {
     const months = useRef<Month[]>(MONTHS)
 
     return (
@@ -44,7 +45,7 @@ export function MonthSlides({ handleChangeMonth }: Props) {
                 >
                     {months.current.map((month, key) => (
                         <SwiperSlide key={`month_${key}`}>
-                            <span className="inline-block hover:bg-white font-semibold hover:text-primary cursor-pointer text-white px-4 py-1 rounded-md" onClick={() => handleChangeMonth(month.value)} >{month.title}</span>
+                            <span className={`inline-block hover:bg-white font-semibold hover:text-primary cursor-pointer pointer ${target == month.value ? "text-primary bg-white" : "text-white"}px-4 py-1 rounded-md`} onClick={() => handleChangeMonth(month.value)} >{month.title}</span>
                         </SwiperSlide>
                     ))}
                 </Swiper>

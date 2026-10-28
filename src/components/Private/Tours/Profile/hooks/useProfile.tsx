@@ -25,16 +25,19 @@ export function useProfile({ tour = {} as TourShape }: Props = {} as Props) {
     const { mutateAsync: postTour, isPending: isLoadingPost } = usePostTour();
 
     const onSubmit = useCallback(async (data: TourProfilePayload) => {
+        const availableAt = data.available_at ? dayjs(data.available_at).format("YYYY-MM-DD HH:mm") : ""
+        const unavailableAt = data.unavailable_at ? dayjs(data.unavailable_at).format("YYYY-MM-DD HH:mm") : ""
+
         const payload = {
             ...data,
-            available_at: dayjs(data.available_at).format("YYYY-MM-DD HH:mm"),
-            unavailable_at: dayjs(data.unavailable_at).format("YYYY-MM-DD HH:mm"),
+            available_at: availableAt,
+            unavailable_at: unavailableAt,
         } as TourProfilePayload
         if (payload.id) {
             await putTour({
                 ...payload,
                 id: tour.id ?? 0,
-                banner: payload.banner === "" ? tour?.banner : payload.banner
+                banner: payload.banner === "" ? tour?.banner : payload.banner,
             })
         } else {
             await postTour(payload)
