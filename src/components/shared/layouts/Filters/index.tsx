@@ -65,8 +65,10 @@ export function Filters({ children, id }: Props) {
                         {Object.entries(filters[id] ?? {}).map(([key, value]) => {
                             if (!value) return null;
                             return (
-                                <SwiperSlide key={`filter_tag_${key}`} className="inline text-sm bg-primary text-white px-2 py-1 rounded-md mr-2 mt-2">
-                                  <Manager  index={key} value={String(value)} />
+                                <SwiperSlide key={`filter_tag_${key}`} className="text-sm mr-2 mt-2">
+                                    <div className="inline bg-primary text-white px-2 py-1 rounded-md" >
+                                        <Manager index={key} value={String(value)} />
+                                    </div>
                                 </SwiperSlide>
                             )
                         })}

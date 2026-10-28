@@ -5,12 +5,6 @@ import { z } from "zod";
 export const TourFiltersSchema = z.object({
   title_contains: z
     .string({ required_error: i18n("Validations.required") })
-    .min(3, {
-      message: i18n("Validations.min_length", {
-        field: i18n("Words.title"),
-        length: "3",
-      }),
-    })
     .max(150, {
       message: i18n("Validations.max_length", {
         field: i18n("Words.title"),
