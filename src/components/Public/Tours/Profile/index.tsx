@@ -12,6 +12,7 @@ import { TravelBag } from "@assets/Icons/black/TravelBag";
 import { useSalesContext } from "@components/Public/Sales/context";
 import { useI18n } from "@contexts/I18n";
 import Link from "next/link";
+import { useMemo } from "react";
 
 type Props = {
     tour: TourPreviewShape
@@ -20,6 +21,7 @@ type Props = {
 export function Profile({ tour }: Props) {
     const { t } = useI18n()
     const { handleTargetTour } = useSalesContext()
+    const isAvailableToSale = useMemo(() => tour.sales < (tour.slots ?? 0) && tour.is_available_for_sale, [tour])
 
     return (
         <div className="px-2 lg:px-12 mt-5 mb-[5rem]">
@@ -62,10 +64,9 @@ export function Profile({ tour }: Props) {
                         </div>
                     </div>
                     <div className="flex flex-wrap items-center mb-[-3rem] mt-10">
-
-                        <span onClick={() => tour.is_available_for_sale && handleTargetTour(tour.id)}
-                            className={`${tour.is_available_for_sale ? "hover:bg-white border-rose-400 border hover:text-rose-400 bg-rose-400" : "bg-zinc-500 cursor-not-allowed"} py-4 px-10 inline-block rounded-md text-white font-semibold cursor-pointer`}>
-                            {tour.is_available_for_sale ? t("Screens.tours.book_now") : t("Screens.tours.unavailable_for_booking")}
+                        <span onClick={() => isAvailableToSale && handleTargetTour(tour.id)}
+                            className={`${isAvailableToSale ? "hover:bg-white border-rose-400 border hover:text-rose-400 bg-rose-400" : "bg-zinc-500 cursor-not-allowed"} py-4 px-10 inline-block rounded-md text-white font-semibold cursor-pointer`}>
+                            {isAvailableToSale ? t("Screens.tours.book_now") : t("Screens.tours.unavailable_for_booking")}
                         </span>
                         <When value={!!tour.video}>
                             <div className="md:w-auto mt-6 md:mt-0 ml-2 ">

@@ -12,7 +12,7 @@ export default function Access({ csrf }: LoginPageProps) {
   return (
     <>
       <Header />
-      <div className="">
+      <div className="mb-9">
         <div className="absolute top-0 left-0 w-full h-full rounded-md z-[0]">
           <Image src={"/imgs/backgrounds/marica-background.jpg"} alt="background" fill
             className="h-full w-full object-cover rounded-md" />

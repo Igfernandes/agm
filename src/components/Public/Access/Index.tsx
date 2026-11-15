@@ -10,7 +10,7 @@ export function AccessContent({ csrf }: Props) {
   const { t } = useI18n()
 
   return (
-    <div className="md:w-[400px] mx-auto">
+    <div className="md:max-w-[400px] mx-auto">
       <div className="mb-1">
         <h2 className="text-2xl text-white">
           <strong>{t("Screens.access.title")}</strong>

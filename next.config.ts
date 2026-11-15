@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ["192.168.1.4"],
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -8,7 +9,7 @@ const nextConfig: NextConfig = {
         hostname: "localhost/**",
       },
       {
-        hostname: "192.168.1.5/**",
+        hostname: "192.168.1.4/**",
       },
       {
         hostname: "www.instagram.com",
