@@ -11,9 +11,9 @@ export function Header() {
   return (
     <header className="absolute w-full left-0 top-3 md:top-5 z-50">
       <div className="w-full md:w-[85%] max-w-[1250px] px-1 md:mx-auto">
-        <div className="information md:flex justify-between text-white mb-2">
-          <div className="flex items-center">
-            <div className="address ml-2 pr-2 ">
+        <div className="information md:flex items-center justify-between text-white mb-2">
+          <div className="flex items-center justify-center">
+            <div className="address ml-2 pr-2 w-[50%] lg:w-auto">
               <span className="text-xs font-semibold">
                 {t("Screens.home.contact.address_title")}
               </span>
@@ -65,7 +65,7 @@ export function Header() {
         </div>
         <div className="navbar flex items-center justify-between bg-white py-2 px-4 rounded-full">
           <div className="flex items-center">
-            <div className="logo p-2 ml-5">
+            <div className="logo p-2 lg:ml-5">
               <Image
                 src={"/imgs/logotype.png"}
                 width={90}
@@ -75,7 +75,7 @@ export function Header() {
               />
             </div>
             <div className="hidden md:block">
-              <ul className="flex items-center mx-4">
+              <ul className="flex text-sm items-center mx-4">
                 <li className="mx-2">
                   <Link className="font-semibold text-zinc-600 hover:text-primary" href={"#about_us"}>
                     {t("Screens.home.menu.about_us")}

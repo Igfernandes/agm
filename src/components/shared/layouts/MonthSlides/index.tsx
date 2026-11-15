@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
-import { Dispatch, SetStateAction, useRef } from "react";
+import { Dispatch, SetStateAction, useMemo } from "react";
 import { Month, MONTHS } from "@constants/months";
 import { ArrowLeft } from "@assets/Icons/black/ArrowLeft";
 import { ArrowRight } from "@assets/Icons/black/ArrowRight";
@@ -12,7 +12,14 @@ type Props = {
 }
 
 export function MonthSlides({ handleChangeMonth, target }: Props) {
-    const months = useRef<Month[]>(MONTHS)
+    const months = useMemo<Month[]>(() => MONTHS, [])
+    const slides = useMemo(() => {
+        return months.map((month, key) => (
+            <SwiperSlide key={`month_${key}`}>
+                <span className={`inline-block hover:bg-white hover:text-primary font-semibold cursor-pointer pointer ${target == month.value ? "bg-white text-theme" : "text-white"} px-4 py-1 rounded-md`} onClick={() => handleChangeMonth(month.value)} >{month.title}</span>
+            </SwiperSlide>
+        ))
+    }, [target, months, handleChangeMonth])
 
     return (
         <div className="flex items-center max-w-[730px] mx-auto my-5">
@@ -43,11 +50,7 @@ export function MonthSlides({ handleChangeMonth, target }: Props) {
                         },
                     }}
                 >
-                    {months.current.map((month, key) => (
-                        <SwiperSlide key={`month_${key}`}>
-                            <span className={`inline-block hover:bg-white font-semibold hover:text-primary cursor-pointer pointer ${target == month.value ? "text-primary bg-white" : "text-white"}px-4 py-1 rounded-md`} onClick={() => handleChangeMonth(month.value)} >{month.title}</span>
-                        </SwiperSlide>
-                    ))}
+                    {slides}
                 </Swiper>
             </div>
             <div className="ml-2">
